@@ -24,12 +24,14 @@ export function PartnersSection() {
                 className="card-dark p-7 flex flex-col gap-5 group border border-transparent hover:border-[rgba(201,168,76,0.4)] transition-all duration-300 block"
               >
                 {/* Logo */}
-                <div className="h-12 flex items-center">
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    className="max-h-10 max-w-[160px] w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
-                  />
+                <div className="h-14 flex items-center">
+                  <div className="px-3 py-2 rounded-md bg-white/90 group-hover:bg-white transition-colors duration-300 inline-flex items-center">
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="max-h-8 max-w-[140px] w-auto object-contain"
+                    />
+                  </div>
                 </div>
 
                 {/* Divider */}
