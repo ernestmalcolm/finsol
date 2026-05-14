@@ -201,8 +201,28 @@ export const VALUES = [
 
 // ─── PARTNERS ─────────────────────────────────────────────────────────────────
 export const PARTNERS = [
-  { name: 'Africa Due Diligence (ADD)',             role: 'Strategic partner for on-the-ground risk intelligence and counterparty verification across African markets.' },
-  { name: 'Joe Tom Capital',                        role: 'Capital markets and financial structuring partnership bringing institutional-grade deal architecture to African transactions.' },
-  { name: 'Global Business Roundtable (GBR)',       role: 'Strategic membership giving our clients access to a robust ecosystem of vetted global professionals.' },
-  { name: 'Business Network International (BNI)',   role: 'Professional network supporting trusted referrals and business development across sectors.' },
+  {
+    name:    'Africa Due Diligence (ADD)',
+    role:    'Strategic partner for on-the-ground risk intelligence and counterparty verification across African markets.',
+    website: 'https://africaduediligence.com',
+    logo:    '/images/partners/add.png',
+  },
+  {
+    name:    'Joe Tom Capital',
+    role:    'Capital markets and financial structuring partnership bringing institutional-grade deal architecture to African transactions.',
+    website: 'https://www.joetomcapital.com',
+    logo:    '/images/partners/joetom.webp',
+  },
+  {
+    name:    'Global Business Roundtable (GBR)',
+    role:    'Strategic membership giving our clients access to a robust ecosystem of vetted global professionals.',
+    website: 'https://thegbr.org',
+    logo:    '/images/partners/gbr.png',
+  },
+  {
+    name:    'Business Network International (BNI)',
+    role:    'Professional network supporting trusted referrals and business development across sectors.',
+    website: 'https://www.bni.com',
+    logo:    '/images/partners/bni.png',
+  },
 ]

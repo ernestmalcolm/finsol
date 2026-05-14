@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react'
 import { PARTNERS } from '@/lib/constants'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
@@ -16,20 +17,40 @@ export function PartnersSection() {
         <div className="grid sm:grid-cols-2 gap-6">
           {PARTNERS.map((partner, i) => (
             <ScrollReveal key={partner.name} delay={i * 0.1}>
-              <div className="card-dark p-7 flex gap-5 group border border-transparent hover:border-[rgba(201,168,76,0.4)] transition-colors duration-300">
-                {/* Initials badge */}
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-card bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.2)]">
-                  <span className="font-mono text-xs font-medium text-gold">
-                    {partner.name.split(' ').slice(0, 2).map((w) => w[0]).join('')}
-                  </span>
+              <a
+                href={partner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-dark p-7 flex flex-col gap-5 group border border-transparent hover:border-[rgba(201,168,76,0.4)] transition-all duration-300 block"
+              >
+                {/* Logo */}
+                <div className="h-12 flex items-center">
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="max-h-10 max-w-[160px] w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                  />
                 </div>
-                <div>
-                  <h3 className="font-display text-lg font-medium text-text-primary mb-2">
-                    {partner.name}
-                  </h3>
+
+                {/* Divider */}
+                <div className="h-px bg-border group-hover:bg-[rgba(201,168,76,0.3)] transition-colors duration-300" />
+
+                {/* Info */}
+                <div className="flex flex-col gap-2 flex-1">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="font-display text-lg font-medium text-text-primary group-hover:text-gold transition-colors duration-300">
+                      {partner.name}
+                    </h3>
+                    <ExternalLink className="w-3.5 h-3.5 text-text-muted group-hover:text-gold flex-shrink-0 transition-colors duration-300" />
+                  </div>
                   <p className="text-text-secondary text-sm leading-relaxed">{partner.role}</p>
                 </div>
-              </div>
+
+                {/* Link label */}
+                <p className="font-mono text-[10px] tracking-[0.2em] text-text-muted group-hover:text-gold uppercase transition-colors duration-300">
+                  {partner.website.replace('https://', '')}
+                </p>
+              </a>
             </ScrollReveal>
           ))}
         </div>

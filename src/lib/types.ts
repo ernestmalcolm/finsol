@@ -53,6 +53,8 @@ export interface Value {
 export interface Partner {
   name: string
   role: string
+  website: string
+  logo: string
 }
 
 export interface ContactFormData {
