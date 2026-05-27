@@ -4,7 +4,6 @@ import { WhyAfricaSection }   from '@/components/home/WhyAfricaSection'
 import { CommoditiesSection } from '@/components/home/CommoditiesSection'
 import { RegionsSection }     from '@/components/home/RegionsSection'
 import { InstrumentsSection } from '@/components/home/InstrumentsSection'
-import { LeadershipSection }  from '@/components/home/LeadershipSection'
 import { PartnerCTASection }  from '@/components/home/PartnerCTASection'
 
 export default function HomePage() {
@@ -16,7 +15,6 @@ export default function HomePage() {
       <CommoditiesSection />
       <RegionsSection />
       <InstrumentsSection />
-      <LeadershipSection />
       <PartnerCTASection />
     </>
   )
