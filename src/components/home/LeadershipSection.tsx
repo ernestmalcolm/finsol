@@ -39,9 +39,9 @@ const TEAM: TeamMember[] = [
   },
   {
     name: 'Ernest Mwinchumu',
-    role: 'Tech Consulting',
-    photo: null,
-    bio: '',
+    role: 'Tech Consultant',
+    photo: '/images/team/ernest-mwinchumu-v2.jpg',
+    bio: 'Ernest is a software engineer and product leader holding a BSc (Hons) in Computer Science from the University of Dar es Salaam. He specialises in frontend and mobile development — working across React, Next.js, TypeScript, and React Native — with a strong eye for UI/UX design and product strategy. He currently serves as Tech Lead at Simplitech, where he owns end-to-end delivery of mobile and web platforms used by tens of thousands of users, spanning product direction, interface design, and cross-functional execution. His career began at Tanzania\'s e-Government Authority, contributing to open-source initiatives and technical research, before joining Simplitech and growing into a leadership role. At FinSol, Ernest covers the full technology brief — from digital presence and product roadmap to vendor evaluation and internal tooling — bringing a product-minded, design-conscious approach to every decision.',
   },
   {
     name: 'TBA',
