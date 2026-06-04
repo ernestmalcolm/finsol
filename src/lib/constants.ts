@@ -51,68 +51,32 @@ export const SERVICES = [
   {
     slug:        'commodity-brokerage',
     icon:        'Package',
-    title:       'Commodity Brokerage',
-    short:       'Sourcing and managing premium commodities with end-to-end supply chain solutions.',
-    description: 'We source, verify, and broker premium African commodities from trusted producer networks in Tanzania and across East and Central Africa. We manage the entire process from origin verification to delivery — including logistics coordination, quality certification, and trade finance arrangement.',
-    audience:    'International commodity buyers, importers, trading houses, food manufacturers, and industrial processors.',
-    outputs:     ['Source verification', 'Quality certification', 'Logistics coordination', 'Trade finance arrangement', 'Delivery management'],
+    title:       'Commodity Brokerage & Agribusiness',
+    short:       'Sourcing and managing premium agricultural commodities and minerals with end-to-end supply chain solutions.',
+    description: 'We source, verify, and broker premium African commodities from trusted producer networks in Tanzania and across East and Central Africa — including coffee, sesame, vanilla, cashew, sisal, grains, and industrial minerals. We manage the entire process from origin verification to delivery: quality certification, seasonal contract planning, logistics coordination, and trade finance arrangement. Whether you are securing a sesame harvest window or building a long-term vanilla supply relationship, our on-the-ground networks give you verified origin, certified quality, and executable contracts.',
+    audience:    'International commodity buyers, importers, trading houses, food manufacturers, flavour houses, and industrial processors seeking reliable African agricultural supply.',
+    outputs:     ['Source verification', 'Quality certification', 'Seasonal contract planning', 'Logistics coordination', 'Trade finance arrangement', 'Delivery management'],
   },
   {
     slug:        'due-diligence',
     icon:        'Search',
     title:       'Regional Due Diligence',
     short:       'Providing in-depth risk assessment and market intelligence for informed decisions.',
-    description: 'Finsol provides comprehensive due diligence — covering political and regulatory risk, counterparty verification, market sizing, sector analysis, and competitive landscape mapping across our seven operating markets.',
+    description: 'Finsol provides comprehensive due diligence — covering political and regulatory risk, counterparty verification, market sizing, sector analysis, and competitive landscape mapping across our seven operating markets. Engagements are aligned with Africa Due Diligence (ADD) standards, and preliminary onboarding includes KYC and validation through the ADD platform before formal collaboration.',
     audience:    'Any international business or investor conducting first-entry or expansion into East, Central, or West Africa.',
     outputs:     ['Risk reports', 'Counterparty assessments', 'Market entry frameworks', 'Regulatory compliance reviews'],
   },
 ]
 
 // ─── COMMODITIES ─────────────────────────────────────────────────────────────
-export const COMMODITIES = [
-  {
-    slug:        'sisal',
-    name:        'Sisal',
-    image:       '/images/commodities/sisal.jpg',
-    origin:      'Tanga & Kilosa regions, Tanzania',
-    description: "Tanzania is one of the world's leading sisal producers. We source hard fibre sisal from verified estates, supplying rope, twine, and composite materials manufacturers globally.",
-  },
-  {
-    slug:        'coffee',
-    name:        'Coffee',
-    image:       '/images/commodities/coffee.jpg',
-    origin:      'Mount Kilimanjaro & Southern Highlands, Tanzania',
-    description: 'Tanzanian Arabica and Robusta coffee, including AA and AB grades. Favoured by specialty roasters across Europe, Asia, and North America.',
-  },
-  {
-    slug:        'cashewnuts',
-    name:        'Cashewnuts',
-    image:       '/images/commodities/cashewnuts.jpg',
-    origin:      'Coastal Tanzania',
-    description: "East Africa is the world's second-largest cashew producing region. We source raw and processed cashewnuts from smallholder cooperative networks in coastal Tanzania.",
-  },
-  {
-    slug:        'grains',
-    name:        'Grains',
-    image:       '/images/commodities/grains.jpg',
-    origin:      'Central & Southern Tanzania',
-    description: 'Including maize, sorghum, sesame, and sunflower seeds. Supplying food processors, animal feed manufacturers, and commodity traders globally.',
-  },
-  {
-    slug:        'minerals',
-    name:        'Minerals',
-    image:       '/images/commodities/minerals.jpg',
-    origin:      'Tanzania, Zambia & DRC',
-    description: 'Industrial minerals including graphite, limestone, gypsum, and coal sourced from verified, licensed mining operations across East and Central Africa.',
-  },
-  {
-    slug:        'precious-minerals',
-    name:        'Precious Minerals',
-    image:       '/images/commodities/precious-minerals.jpg',
-    origin:      'Tanzania & East Africa',
-    description: 'Including gold, tanzanite, and coloured gemstones. All sourced through fully compliant, licensed channels with complete provenance documentation.',
-  },
-]
+export {
+  COMMODITIES,
+  AGRICULTURAL_PRODUCTS,
+  FEATURED_COMMODITIES,
+  AGRIBUSINESS_SEO,
+  SEASONAL_CALENDAR,
+  getCommodity,
+} from './commodities'
 
 // ─── REGIONS ─────────────────────────────────────────────────────────────────
 export const REGIONS = [
@@ -122,7 +86,7 @@ export const REGIONS = [
     badge:   'HQ',
     city:    'Dar es Salaam',
     coords:  [-6.7924, 39.2083] as [number, number],
-    sectors: ['Sisal', 'Coffee', 'Cashewnuts', 'Gold', 'Tanzanite', 'Infrastructure'],
+    sectors: ['Sisal', 'Coffee', 'Cashewnuts', 'Sesame', 'Vanilla', 'Gold', 'Tanzanite', 'Infrastructure'],
     context: "Finsol's home market and primary operating base. Stable investment environment, rapidly growing commodity export sector, and gateway to East and Central Africa.",
   },
   {
@@ -199,13 +163,30 @@ export const VALUES = [
   { icon: 'TrendingUp', title: 'Impact',      desc: 'We are dedicated to creating measurable, sustainable impact across Africa and beyond — driving economic growth that lasts for generations.' },
 ]
 
+// ─── AFRICA DUE DILIGENCE (ADD) ───────────────────────────────────────────────
+export const ADD_VERIFICATION = {
+  platformUrl: 'https://africaduediligence.com',
+  verifiedStatement:
+    'Finsol T Ltd is verified by Africa Due Diligence (ADD) — an independent platform for KYC, counterparty validation, and risk intelligence across African markets.',
+  preliminaryStage:
+    'Before we work together, every engagement begins with a preliminary onboarding stage: identity verification (KYC), business validation, and counterparty checks conducted through the Africa Due Diligence platform. This protects all parties and ensures every introduction is built on verified foundations.',
+  recommendation:
+    'We recommend and prefer working with businesses that are verified by Africa Due Diligence. ADD-verified counterparties benefit from faster onboarding, stronger institutional confidence, and smoother cross-border transaction structuring.',
+}
+
 // ─── PARTNERS ─────────────────────────────────────────────────────────────────
 export const PARTNERS = [
   {
     name:    'Africa Due Diligence (ADD)',
-    role:    'Strategic partner for on-the-ground risk intelligence and counterparty verification across African markets.',
+    role:    'Verification and due diligence partner. Finsol T Ltd is ADD-verified, and we use the ADD platform for KYC, counterparty validation, and risk intelligence across African markets.',
     website: 'https://africaduediligence.com',
     logo:    '/images/partners/add.png',
+  },
+  {
+    name:    'BeamAfrique',
+    role:    "Pan-African media partner for sharing completed investments, deal milestones, and opportunities across the continent — projecting Africa's economic story to a global audience.",
+    website: 'https://beamafrique.com',
+    logo:    '/images/partners/beamafrique.jpg',
   },
   {
     name:    'Joe Tom Capital',

@@ -1,0 +1,261 @@
+import type { Commodity } from './types'
+
+export const COMMODITIES: Commodity[] = [
+  // ─── Featured agricultural commodities ───────────────────────────────────
+  {
+    slug: 'coffee',
+    name: 'Coffee',
+    image: '/images/commodities/coffee.jpg',
+    origin: 'Mount Kilimanjaro & Southern Highlands, Tanzania',
+    shortDescription: 'Tanzanian Arabica and Robusta — AA, AB, and specialty grades for global roasters.',
+    description:
+      'Tanzania is one of East Africa\'s premier coffee origins, producing both high-altitude Arabica from Kilimanjaro and Mbeya, and Robusta from the Lake Zone. We source directly from cooperative networks and licensed exporters, with full traceability from farm gate to port. Tanzanian coffee is favoured by specialty roasters across Europe, Asia, and North America for its bright acidity, floral notes, and consistent cup quality.',
+    category: 'agriculture',
+    featured: true,
+    availability: 'Year-round with seasonal harvest windows',
+    harvestSeason: 'Main crop: July–December (Arabica); April–August (Robusta)',
+    exportPeak: 'October–March',
+    grades: ['AA', 'AB', 'PB (Peaberry)', 'Robusta Screen 15+', 'Organic certified'],
+    applications: ['Specialty roasting', 'Commercial blending', 'Instant coffee production'],
+    certifications: ['UTZ', 'Organic', 'Rainforest Alliance (via producer networks)'],
+    seoKeywords: ['Tanzania coffee export', 'Arabica coffee Tanzania', 'Kilimanjaro coffee', 'East Africa coffee broker'],
+  },
+  {
+    slug: 'cashewnuts',
+    name: 'Cashewnuts',
+    image: '/images/commodities/cashewnuts.jpg',
+    origin: 'Coastal Tanzania — Mtwara, Lindi & Tanga',
+    shortDescription: 'Raw and processed cashew from East Africa\'s second-largest producing region.',
+    description:
+      'East Africa is the world\'s second-largest cashew producing region, and Tanzania is a major contributor with over 200,000 tonnes annually. We source raw cashew nuts (RCN) and processed kernels from smallholder cooperative networks across coastal Tanzania, connecting buyers to consistent supply with verified origin documentation and grade certification.',
+    category: 'agriculture',
+    featured: true,
+    availability: 'Seasonal — pre-booking recommended',
+    harvestSeason: 'October–December',
+    exportPeak: 'January–June',
+    grades: ['Raw Cashew Nuts (RCN)', 'WW320', 'WW240', 'WW180', 'Splits & pieces'],
+    applications: ['Snacking', 'Confectionery', 'Food manufacturing', 'Cashew butter production'],
+    certifications: ['Aflatoxin tested', 'Phytosanitary certified'],
+    seoKeywords: ['Tanzania cashew export', 'raw cashew nuts Africa', 'cashew broker East Africa'],
+  },
+  {
+    slug: 'sisal',
+    name: 'Sisal',
+    image: '/images/commodities/sisal.jpg',
+    origin: 'Tanga & Kilosa regions, Tanzania',
+    shortDescription: 'Hard fibre sisal from verified estates — rope, twine, and composite materials.',
+    description:
+      'Tanzania is one of the world\'s leading sisal producers, with a heritage stretching back over a century. We source hard fibre sisal (Agave sisalana) from verified estates in Tanga and Kilosa, supplying rope manufacturers, twine producers, and composite materials companies globally. Tanzanian sisal is prized for its high tensile strength, durability, and consistent fibre length.',
+    category: 'agriculture',
+    featured: true,
+    availability: 'Year-round',
+    harvestSeason: 'Continuous harvest — peak fibre quality November–April',
+    exportPeak: 'Year-round with Q1–Q2 volume peaks',
+    grades: ['UG Grade 1', 'UG Grade 2', 'UD Grade 1', 'UD Grade 2', 'Flax grade'],
+    applications: ['Rope & cordage', 'Twine & baler twine', 'Composite materials', 'Geotextiles', 'Paper pulp'],
+    seoKeywords: ['Tanzania sisal export', 'sisal fibre broker', 'African sisal supplier'],
+  },
+  {
+    slug: 'sesame',
+    name: 'Sesame',
+    image: '/images/commodities/sesame.jpg',
+    origin: 'Central & Southern Tanzania — Dodoma, Singida & Mbeya',
+    shortDescription: 'Hulled and natural sesame seeds from Tanzania\'s growing export corridor.',
+    description:
+      'Tanzania is emerging as a significant sesame exporter, with production concentrated in the central and southern highlands. We broker hulled and natural sesame seeds for food manufacturers, oil processors, and commodity traders globally. Our supply chain covers origin verification, moisture and purity testing, and export documentation through Dar es Salaam and Mtwara ports.',
+    category: 'agriculture',
+    featured: true,
+    availability: 'Seasonal — contracts available year-round',
+    harvestSeason: 'May–August',
+    exportPeak: 'September–February',
+    grades: ['Natural sesame', 'Hulled sesame', 'Sortex quality', '99% purity'],
+    applications: ['Baking & confectionery', 'Tahini production', 'Sesame oil extraction', 'Spice blends'],
+    certifications: ['Phytosanitary certified', 'Aflatoxin tested', 'Organic (select producers)'],
+    seoKeywords: ['Tanzania sesame export', 'sesame seeds Africa', 'hulled sesame supplier', 'sesame broker Tanzania'],
+  },
+  {
+    slug: 'vanilla',
+    name: 'Vanilla',
+    image: '/images/commodities/vanilla.jpg',
+    origin: 'Uganda & Tanzania — Bundibugyo, Mbale & Tanga',
+    shortDescription: 'Planifolia vanilla beans from East Africa\'s expanding premium spice corridor.',
+    description:
+      'East Africa is one of the world\'s fastest-growing vanilla origins, with Uganda now among the top global producers of Bourbon (Planifolia) vanilla. We source cured vanilla beans from verified farmer networks in Uganda and Tanzania, supplying flavour houses, food manufacturers, and specialty importers. Our vanilla carries full traceability, moisture content certification, and vanillin content analysis.',
+    category: 'agriculture',
+    featured: true,
+    availability: 'Seasonal — advance contracts strongly recommended',
+    harvestSeason: 'June–September (primary curing window)',
+    exportPeak: 'October–March',
+    grades: ['Gourmet Grade A (15–20 cm)', 'Grade B (extract quality)', 'Cuts & splits', 'Organic certified'],
+    applications: ['Premium food & beverage', 'Vanilla extract production', 'Confectionery', 'Fragrance & cosmetics'],
+    certifications: ['Organic (select lots)', 'Moisture & vanillin content certified'],
+    seoKeywords: ['Uganda vanilla export', 'Tanzania vanilla beans', 'East Africa vanilla supplier', 'Bourbon vanilla Africa'],
+  },
+
+  // ─── Additional agricultural products (catalog) ──────────────────────────
+  {
+    slug: 'maize',
+    name: 'Maize',
+    image: '/images/commodities/maize.jpg',
+    origin: 'Southern Highlands & Rift Valley, Tanzania',
+    shortDescription: 'White and yellow maize for food processors, millers, and animal feed manufacturers.',
+    description:
+      'Tanzania produces over 6 million tonnes of maize annually, making it a strategic supplier for regional and international markets. We broker white and yellow maize for food processors, commercial millers, and animal feed manufacturers, with quality grading against moisture, aflatoxin, and foreign matter standards.',
+    category: 'agriculture',
+    availability: 'Seasonal with storage carry-over',
+    harvestSeason: 'June–August (vuli & masika seasons)',
+    exportPeak: 'September–January',
+    grades: ['White maize Grade 1', 'Yellow maize', 'Feed grade', 'Food grade (<13% moisture)'],
+    applications: ['Commercial milling', 'Animal feed compounding', 'Food manufacturing', 'Brewing'],
+    seoKeywords: ['Tanzania maize export', 'white maize Africa', 'maize broker East Africa'],
+  },
+  {
+    slug: 'sorghum',
+    name: 'Sorghum',
+    image: '/images/commodities/sorghum.jpg',
+    origin: 'Central Tanzania — Dodoma & Shinyanga',
+    shortDescription: 'Red and white sorghum for brewing, food processing, and animal feed.',
+    description:
+      'Sorghum is a drought-resilient staple crop across Tanzania\'s semi-arid regions. We source red and white sorghum varieties for brewing companies, food processors, and animal feed manufacturers, with quality certification against regional and international standards.',
+    category: 'agriculture',
+    availability: 'Seasonal',
+    harvestSeason: 'May–July',
+    exportPeak: 'August–December',
+    grades: ['White sorghum', 'Red sorghum', 'Feed grade', 'Food grade'],
+    applications: ['Brewing & malt production', 'Flour milling', 'Animal feed', 'Traditional food products'],
+    seoKeywords: ['Tanzania sorghum export', 'sorghum supplier Africa'],
+  },
+  {
+    slug: 'sunflower',
+    name: 'Sunflower Seeds',
+    image: '/images/commodities/sunflower.jpg',
+    origin: 'Northern Tanzania — Arusha & Manyara',
+    shortDescription: 'Oil-grade sunflower seeds for crushing and food manufacturing.',
+    description:
+      'Tanzania\'s sunflower sector is expanding rapidly, driven by domestic oil demand and growing export interest. We broker oil-grade sunflower seeds for crushing plants and food manufacturers, with oil content analysis and purity certification available on request.',
+    category: 'agriculture',
+    availability: 'Seasonal',
+    harvestSeason: 'May–July',
+    exportPeak: 'August–November',
+    grades: ['Oil grade (>40% oil content)', 'Confectionery grade', 'Feed grade'],
+    applications: ['Edible oil crushing', 'Confectionery snacking', 'Animal feed'],
+    seoKeywords: ['Tanzania sunflower seeds export', 'sunflower oil seed Africa'],
+  },
+  {
+    slug: 'tea',
+    name: 'Tea',
+    image: '/images/commodities/tea.jpg',
+    origin: 'Southern Highlands — Mufindi, Tukuyu & Njombe',
+    shortDescription: 'Black CTC and orthodox tea from Tanzania\'s highland estates.',
+    description:
+      'Tanzania is the fourth-largest tea producer in sub-Saharan Africa, with highland estates producing distinctive black teas. We connect buyers to licensed tea factories and exporters, offering CTC and orthodox grades with full origin documentation.',
+    category: 'agriculture',
+    availability: 'Year-round production',
+    harvestSeason: 'Year-round — peak quality June–September',
+    exportPeak: 'Year-round',
+    grades: ['CTC BP1', 'CTC PF1', 'Orthodox OP', 'Fannings & dust'],
+    applications: ['Blending', 'Private label tea brands', 'Instant tea production'],
+    seoKeywords: ['Tanzania tea export', 'African black tea supplier'],
+  },
+  {
+    slug: 'cotton',
+    name: 'Cotton',
+    image: '/images/commodities/cotton.jpg',
+    origin: 'Western Tanzania — Shinyanga, Mwanza & Mara',
+    shortDescription: 'Ginned cotton lint from Tanzania\'s lake zone cotton belt.',
+    description:
+      'Tanzania\'s cotton sector in the Lake Zone produces ginned lint for textile manufacturers and cotton traders. We broker cotton through licensed ginneries with grade classification and bale weight certification.',
+    category: 'agriculture',
+    availability: 'Seasonal',
+    harvestSeason: 'May–August (ginning season)',
+    exportPeak: 'September–February',
+    grades: ['Grade A lint', 'Grade B lint', 'Grade C lint'],
+    applications: ['Textile manufacturing', 'Yarn spinning', 'Medical cotton'],
+    seoKeywords: ['Tanzania cotton export', 'cotton lint Africa supplier'],
+  },
+  {
+    slug: 'cloves',
+    name: 'Cloves',
+    image: '/images/commodities/cloves.jpg',
+    origin: 'Zanzibar & Pemba, Tanzania',
+    shortDescription: 'Whole and ground cloves from the historic Spice Islands.',
+    description:
+      'The Zanzibar archipelago has been synonymous with cloves for centuries. We source whole dried cloves from Pemba and Unguja island farmer networks, supplying spice traders, food manufacturers, and pharmaceutical companies with fully traceable, phytosanitary-certified product.',
+    category: 'agriculture',
+    availability: 'Seasonal',
+    harvestSeason: 'September–December',
+    exportPeak: 'January–April',
+    grades: ['Whole cloves Grade A', 'Whole cloves Grade B', 'Clove powder', 'Clove stem'],
+    applications: ['Spice trade', 'Food & beverage flavouring', 'Pharmaceutical', 'Essential oil distillation'],
+    seoKeywords: ['Zanzibar cloves export', 'Pemba cloves supplier', 'Spice Islands cloves'],
+  },
+
+  // ─── Minerals ────────────────────────────────────────────────────────────
+  {
+    slug: 'minerals',
+    name: 'Minerals',
+    image: '/images/commodities/minerals.jpg',
+    origin: 'Tanzania, Zambia & DRC',
+    shortDescription: 'Industrial minerals from verified, licensed mining operations.',
+    description:
+      'Industrial minerals including graphite, limestone, gypsum, and coal sourced from verified, licensed mining operations across East and Central Africa. Full export compliance, assay certification, and logistics coordination included.',
+    category: 'minerals',
+    featured: true,
+    availability: 'Contract basis',
+    harvestSeason: 'Continuous extraction',
+    exportPeak: 'Year-round',
+    grades: ['Graphite flake', 'Limestone aggregate', 'Gypsum', 'Thermal coal'],
+    applications: ['Construction', 'Industrial processing', 'Energy generation'],
+    seoKeywords: ['Tanzania minerals export', 'industrial minerals Africa'],
+  },
+  {
+    slug: 'precious-minerals',
+    name: 'Precious Minerals',
+    image: '/images/commodities/precious-minerals.jpg',
+    origin: 'Tanzania & East Africa',
+    shortDescription: 'Gold, tanzanite, and coloured gemstones through fully compliant channels.',
+    description:
+      'Including gold, tanzanite, and coloured gemstones. All sourced through fully compliant, licensed channels with complete provenance documentation, Kimberley Process certification where applicable, and assay verification.',
+    category: 'precious-minerals',
+    featured: true,
+    availability: 'On request',
+    harvestSeason: 'N/A',
+    exportPeak: 'Year-round',
+    grades: ['Gold dore', 'Tanzanite rough & cut', 'Coloured gemstones'],
+    applications: ['Jewellery manufacturing', 'Investment', 'Collector markets'],
+    seoKeywords: ['Tanzanite export Tanzania', 'African gold broker', 'gemstone sourcing East Africa'],
+  },
+]
+
+export const AGRICULTURAL_PRODUCTS = COMMODITIES.filter((c) => c.category === 'agriculture')
+
+export const FEATURED_COMMODITIES = COMMODITIES.filter((c) => c.featured)
+
+export function getCommodity(slug: string): Commodity | undefined {
+  return COMMODITIES.find((c) => c.slug === slug)
+}
+
+export const AGRIBUSINESS_SEO = {
+  title: 'African Agribusiness & Commodity Export',
+  description:
+    'Finsol T Ltd brokers premium agricultural commodities from Tanzania and East Africa — coffee, sesame, vanilla, cashew, sisal, and grains. Verified origin, certified quality, end-to-end export management.',
+  keywords: [
+    'agribusiness Africa',
+    'agricultural commodity export Tanzania',
+    'sesame export Tanzania',
+    'vanilla export Uganda',
+    'coffee broker East Africa',
+    'cashew nuts export Africa',
+    'African agricultural products',
+    'commodity sourcing Tanzania',
+    'seasonal crop export Africa',
+    'Finsol agribusiness',
+  ],
+}
+
+export const SEASONAL_CALENDAR = [
+  { months: 'Jan–Mar', products: ['Cashew export peak', 'Vanilla export window', 'Sesame shipments', 'Coffee main export'] },
+  { months: 'Apr–Jun', products: ['Sisal peak quality', 'Sesame & sorghum harvest prep', 'Vanilla harvest begins'] },
+  { months: 'Jul–Sep', products: ['Coffee harvest (Arabica)', 'Sesame harvest', 'Sunflower & maize harvest', 'Vanilla curing season'] },
+  { months: 'Oct–Dec', products: ['Cashew harvest', 'Cloves harvest (Zanzibar)', 'Coffee harvest continues', 'Export planning for Q1'] },
+]

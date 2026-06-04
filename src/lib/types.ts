@@ -14,12 +14,24 @@ export interface Service {
   outputs: string[]
 }
 
+export type CommodityCategory = 'agriculture' | 'minerals' | 'precious-minerals'
+
 export interface Commodity {
   slug: string
   name: string
-  image: string
+  image?: string
   origin: string
   description: string
+  shortDescription: string
+  category: CommodityCategory
+  featured?: boolean
+  availability: string
+  harvestSeason: string
+  exportPeak: string
+  grades?: string[]
+  applications?: string[]
+  certifications?: string[]
+  seoKeywords?: string[]
 }
 
 export interface Region {

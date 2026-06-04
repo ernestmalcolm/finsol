@@ -5,12 +5,28 @@ module.exports = {
   changefreq: 'monthly',
   priority: 0.7,
   exclude: ['/api/*'],
-  additionalPaths: async (config) => [
-    await config.transform(config, '/'),
-    await config.transform(config, '/about'),
-    await config.transform(config, '/services'),
-    await config.transform(config, '/commodities'),
-    await config.transform(config, '/regions'),
-    await config.transform(config, '/contact'),
-  ],
+  additionalPaths: async (config) => {
+    const staticPaths = [
+      '/',
+      '/about',
+      '/services',
+      '/services/strategic-advisory',
+      '/services/financial-structuring',
+      '/services/commodity-brokerage',
+      '/services/due-diligence',
+      '/commodities',
+      '/regions',
+      '/contact',
+    ]
+
+    const commoditySlugs = [
+      'coffee', 'cashewnuts', 'sisal', 'sesame', 'vanilla',
+      'maize', 'sorghum', 'sunflower', 'tea', 'cotton', 'cloves',
+      'minerals', 'precious-minerals',
+    ]
+    const commodityPaths = commoditySlugs.map((slug) => `/commodities/${slug}`)
+
+    const allPaths = [...staticPaths, ...commodityPaths]
+    return Promise.all(allPaths.map((path) => config.transform(config, path)))
+  },
 }

@@ -1,5 +1,5 @@
-import { ExternalLink } from 'lucide-react'
-import { PARTNERS } from '@/lib/constants'
+import { ExternalLink, ShieldCheck } from 'lucide-react'
+import { PARTNERS, ADD_VERIFICATION } from '@/lib/constants'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 
@@ -11,8 +11,25 @@ export function PartnersSection() {
           eyebrow="Our Network"
           title="Strategic Partners"
           subtitle="Finsol T Ltd operates within a curated network of world-class partners — giving our clients access to deep expertise across markets, sectors, and institutions."
-          className="mb-16"
+          className="mb-10"
         />
+
+        <ScrollReveal className="mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-5 rounded-md border border-[rgba(201,168,76,0.25)] bg-[rgba(201,168,76,0.05)]">
+            <ShieldCheck className="w-5 h-5 text-gold flex-shrink-0" />
+            <p className="text-text-secondary text-sm leading-relaxed flex-1">
+              {ADD_VERIFICATION.recommendation}
+            </p>
+            <a
+              href={ADD_VERIFICATION.platformUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs tracking-wide text-gold hover:text-gold-light whitespace-nowrap transition-colors"
+            >
+              africaduediligence.com →
+            </a>
+          </div>
+        </ScrollReveal>
 
         <div className="grid sm:grid-cols-2 gap-6">
           {PARTNERS.map((partner, i) => (
@@ -29,7 +46,7 @@ export function PartnersSection() {
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="max-h-8 max-w-[140px] w-auto object-contain"
+                      className="max-h-10 max-w-[200px] w-auto object-contain"
                     />
                   </div>
                 </div>

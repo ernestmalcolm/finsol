@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Target, Shield, Package, Search } from 'lucide-react'
-import { SERVICES } from '@/lib/constants'
+import { Target, Shield, Package, Search, ArrowRight } from 'lucide-react'
+import { SERVICES, AGRICULTURAL_PRODUCTS, AGRIBUSINESS_SEO } from '@/lib/constants'
+import { metadataAlternates } from '@/lib/seo'
 import { PageHero }    from '@/components/shared/PageHero'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import { PartnerCTASection } from '@/components/home/PartnerCTASection'
+import { SeasonalCalendar } from '@/components/commodities/SeasonalCalendar'
 
 const iconMap: Record<string, React.ElementType> = { Target, Shield, Package, Search }
 
@@ -20,9 +23,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = SERVICES.find((s) => s.slug === slug)
   if (!service) return {}
+  if (slug === 'commodity-brokerage') {
+    return {
+      title: service.title,
+      description: AGRIBUSINESS_SEO.description,
+      keywords: AGRIBUSINESS_SEO.keywords,
+      ...metadataAlternates(`/services/${slug}`),
+    }
+  }
   return {
     title: service.title,
     description: service.description,
+    ...metadataAlternates(`/services/${slug}`),
   }
 }
 
@@ -83,6 +95,41 @@ export default async function ServicePage({ params }: Props) {
                   </div>
                 </div>
               </ScrollReveal>
+
+              {slug === 'commodity-brokerage' && (
+                <ScrollReveal delay={0.2}>
+                  <div className="card-dark p-8">
+                    <h3 className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-6">
+                      Agricultural Products We Broker
+                    </h3>
+                    <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                      Our agribusiness portfolio covers {AGRICULTURAL_PRODUCTS.length} agricultural
+                      commodities across Tanzania and East Africa — each with dedicated product pages
+                      covering availability, grades, and seasonal export windows.
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-2">
+                      {AGRICULTURAL_PRODUCTS.map((product) => (
+                        <Link
+                          key={product.slug}
+                          href={`/commodities/${product.slug}`}
+                          className="flex items-center justify-between p-3 rounded-md hover:bg-[rgba(201,168,76,0.05)] transition-colors group"
+                        >
+                          <span className="text-text-secondary text-sm group-hover:text-gold transition-colors">
+                            {product.name}
+                          </span>
+                          <ArrowRight className="w-3 h-3 text-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </Link>
+                      ))}
+                    </div>
+                    <Link
+                      href="/commodities"
+                      className="inline-flex items-center gap-2 mt-6 text-gold text-sm font-mono tracking-wide hover:gap-3 transition-all duration-300"
+                    >
+                      Full commodities catalog <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </ScrollReveal>
+              )}
             </div>
 
             {/* Sidebar — other services */}
@@ -118,6 +165,8 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {slug === 'commodity-brokerage' && <SeasonalCalendar />}
 
       <PartnerCTASection />
     </>

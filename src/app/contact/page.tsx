@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
-import { SITE } from '@/lib/constants'
+import { Mail, Phone, MapPin, Send, ShieldCheck } from 'lucide-react'
+import { SITE, ADD_VERIFICATION } from '@/lib/constants'
 import { PageHero } from '@/components/shared/PageHero'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Get In Touch"
         title="Partner With Finsol T Ltd"
-        subtitle="Whether you are an investor, commodity buyer, or project developer — we want to hear from you."
+        subtitle="Whether you are an investor, commodity buyer, or project developer — we want to hear from you. All new engagements begin with preliminary KYC and validation through Africa Due Diligence."
       />
 
       <section className="py-section bg-surface-base">
@@ -96,6 +96,26 @@ export default function ContactPage() {
                     <span className="text-sm">{SITE.address}</span>
                   </div>
                 </div>
+              </div>
+
+              <div className="card-dark p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <ShieldCheck className="w-4 h-4 text-gold" />
+                  <p className="font-mono text-xs tracking-[0.2em] text-gold uppercase">
+                    Preliminary Onboarding
+                  </p>
+                </div>
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  {ADD_VERIFICATION.preliminaryStage}
+                </p>
+                <a
+                  href={ADD_VERIFICATION.platformUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold text-xs font-mono tracking-wide hover:underline"
+                >
+                  Africa Due Diligence platform →
+                </a>
               </div>
 
               <div className="card-dark p-6">

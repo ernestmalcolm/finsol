@@ -4,11 +4,16 @@ import { StorySection }   from '@/components/about/StorySection'
 import { ValuesSection }  from '@/components/about/ValuesSection'
 import { LeadershipSection } from '@/components/home/LeadershipSection'
 import { PartnersSection } from '@/components/about/PartnersSection'
+import { VerificationSection } from '@/components/about/VerificationSection'
 import { PartnerCTASection } from '@/components/home/PartnerCTASection'
 
+import { metadataAlternates } from '@/lib/seo'
+
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'Learn about Finsol T Ltd — our story, values, leadership, and the strategic partners who extend our reach across Africa.',
+  title: 'About — African Advisory & Commodity Expertise',
+  description:
+    'Learn about Finsol T Ltd — our story, values, leadership, and strategic partners extending our reach across Africa.',
+  ...metadataAlternates('/about'),
 }
 
 export default function AboutPage() {
@@ -22,6 +27,7 @@ export default function AboutPage() {
       <StorySection />
       <ValuesSection />
       <LeadershipSection />
+      <VerificationSection />
       <PartnersSection />
       <PartnerCTASection />
     </>

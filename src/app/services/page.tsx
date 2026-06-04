@@ -2,13 +2,16 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Target, Shield, Package, Search, ArrowRight } from 'lucide-react'
 import { SERVICES } from '@/lib/constants'
+import { metadataAlternates } from '@/lib/seo'
 import { PageHero }    from '@/components/shared/PageHero'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import { PartnerCTASection } from '@/components/home/PartnerCTASection'
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Finsol T Ltd offers Strategic Advisory, Financial Structuring, Commodity Brokerage, and Regional Due Diligence services across Africa.',
+  title: 'Services — Advisory, Trade Finance & Commodity Brokerage',
+  description:
+    'Finsol T Ltd offers Strategic Advisory, Financial Structuring, Commodity Brokerage, and Regional Due Diligence services across Africa.',
+  ...metadataAlternates('/services'),
 }
 
 const iconMap: Record<string, React.ElementType> = { Target, Shield, Package, Search }

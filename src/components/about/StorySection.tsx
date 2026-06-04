@@ -41,7 +41,7 @@ export function StorySection() {
               {
                 year:  'Approach',
                 title: 'Rigorous. Transparent. Partnership-First.',
-                text:  'Every engagement begins with listening. We understand your objectives before we propose a solution, and we structure transactions that protect all parties.',
+                text:  'Every engagement begins with listening and verified foundations. Preliminary onboarding includes KYC and validation through Africa Due Diligence before we structure transactions that protect all parties.',
               },
               {
                 year:  'Mission',

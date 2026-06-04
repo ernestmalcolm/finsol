@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import type { Variants, Transition } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { EASE } from '@/lib/motion'
+import { HeroBackground } from '@/components/home/HeroBackground'
 
 const container: Variants = {
   hidden: {},
@@ -19,13 +20,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-bg.jpg"
-          alt="Dar es Salaam port at sunset"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute inset-0 bg-[rgba(10,8,4,0.45)]" />
+        <HeroBackground />
       </div>
 
       {/* Animated top gold line */}

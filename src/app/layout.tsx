@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans, DM_Mono } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { JsonLd } from '@/components/shared/JsonLd'
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
+import { buildOrganizationSchema } from '@/lib/seo'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -39,6 +42,10 @@ export const metadata: Metadata = {
     'Tanzania advisory',
     'trade finance Africa',
     'commodity brokerage Tanzania',
+    'agribusiness Africa',
+    'sesame export Tanzania',
+    'vanilla export Uganda',
+    'African agricultural products',
     'SBLC DLC Africa',
     'African deal origination',
   ],
@@ -47,14 +54,6 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://finsoltz.com',
     siteName: 'Finsol T Ltd',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Finsol T Ltd — Bridging Capital. Unlocking Africa.',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -75,6 +74,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
         className="bg-surface-base text-text-primary antialiased"
       >
+        <JsonLd data={buildOrganizationSchema()} />
+        <GoogleAnalytics />
         <Navbar />
         <main>{children}</main>
         <Footer />

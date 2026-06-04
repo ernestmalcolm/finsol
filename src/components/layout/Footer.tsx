@@ -2,18 +2,17 @@ import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Logo } from '@/components/shared/Logo'
 import { SITE, NAV_LINKS } from '@/lib/constants'
+import { FOOTER_COMMODITIES } from '@/lib/seo'
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   return (
     <footer className="bg-surface-base border-t border-border">
-      {/* Gold top line */}
       <div className="h-px bg-gold-gradient opacity-40" />
 
       <div className="section-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <Logo className="mb-4" imgClassName="h-11 w-auto" />
             <p className="font-mono text-xs tracking-[0.2em] text-text-muted uppercase mb-4">
@@ -45,7 +44,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div>
             <h4 className="font-mono text-xs tracking-[0.2em] text-gold uppercase mb-5">
               Navigation
@@ -64,17 +62,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="font-mono text-xs tracking-[0.2em] text-gold uppercase mb-5">
               Services
             </h4>
             <ul className="space-y-2">
               {[
-                { label: 'Strategic Advisory',    href: '/services/strategic-advisory' },
+                { label: 'Strategic Advisory', href: '/services/strategic-advisory' },
                 { label: 'Financial Structuring', href: '/services/financial-structuring' },
-                { label: 'Commodity Brokerage',   href: '/services/commodity-brokerage' },
-                { label: 'Due Diligence',         href: '/services/due-diligence' },
+                { label: 'Commodity Brokerage', href: '/services/commodity-brokerage' },
+                { label: 'Due Diligence', href: '/services/due-diligence' },
               ].map((s) => (
                 <li key={s.href}>
                   <Link
@@ -85,6 +82,32 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-mono text-xs tracking-[0.2em] text-gold uppercase mb-5">
+              Commodities
+            </h4>
+            <ul className="space-y-2">
+              {FOOTER_COMMODITIES.map((c) => (
+                <li key={c.href}>
+                  <Link
+                    href={c.href}
+                    className="text-text-secondary hover:text-text-primary text-sm transition-colors"
+                  >
+                    {c.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/commodities"
+                  className="text-gold hover:text-gold-light text-sm transition-colors font-mono text-xs tracking-wide"
+                >
+                  View all →
+                </Link>
+              </li>
             </ul>
 
             <div className="mt-8">
@@ -103,12 +126,8 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="section-container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-text-muted text-xs">
-            © {year} Finsol T Ltd. All rights reserved.
-          </p>
-          <p className="text-text-muted text-xs">
-            Dar es Salaam, Tanzania · Registered Company
-          </p>
+          <p className="text-text-muted text-xs">© {year} Finsol T Ltd. All rights reserved.</p>
+          <p className="text-text-muted text-xs">Dar es Salaam, Tanzania · Registered Company</p>
         </div>
       </div>
     </footer>

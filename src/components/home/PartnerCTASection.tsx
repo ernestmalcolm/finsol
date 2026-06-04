@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { SITE } from '@/lib/constants'
+import { SITE, ADD_VERIFICATION } from '@/lib/constants'
 
 export function PartnerCTASection() {
   return (
@@ -44,7 +44,16 @@ export function PartnerCTASection() {
         >
           Whether you are an investor seeking vetted African exposure, a commodity buyer looking
           for reliable East African supply chains, or a project developer needing financial
-          structuring expertise — Finsol T Ltd is your partner.
+          structuring expertise — Finsol T Ltd is your partner. We are verified by{' '}
+          <a
+            href={ADD_VERIFICATION.platformUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:underline"
+          >
+            Africa Due Diligence
+          </a>
+          , and we recommend ADD-verified businesses for faster, safer collaboration.
         </motion.p>
 
         <motion.div

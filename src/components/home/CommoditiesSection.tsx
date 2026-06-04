@@ -4,9 +4,10 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { COMMODITIES } from '@/lib/constants'
+import { FEATURED_COMMODITIES } from '@/lib/constants'
 import { SectionHeader } from '@/components/shared/SectionHeader'
-import { fadeUpVariants, EASE } from '@/lib/motion'
+import { CommodityImage } from '@/components/commodities/CommodityImage'
+import { fadeUpVariants } from '@/lib/motion'
 
 const containerVariants: Variants = {
   hidden: {},
@@ -23,7 +24,7 @@ export function CommoditiesSection() {
         <SectionHeader
           eyebrow="What We Trade"
           title="Premium African Commodities"
-          subtitle="Sourced from verified producer networks across Tanzania and East Africa. Every shipment carries full origin documentation and quality certification."
+          subtitle="Sourced from verified producer networks across Tanzania and East Africa — including sesame, vanilla, coffee, and cashew. Every shipment carries full origin documentation and quality certification."
           className="mb-16"
         />
 
@@ -34,53 +35,52 @@ export function CommoditiesSection() {
           viewport={{ once: true, margin: '-80px' }}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {COMMODITIES.map((commodity) => (
-            <motion.div
-              key={commodity.slug}
-              variants={cardVariants}
-              onMouseEnter={() => setHovered(commodity.slug)}
-              onMouseLeave={() => setHovered(null)}
-              className="relative overflow-hidden rounded-card border border-border group cursor-pointer"
-              style={{ minHeight: '280px' }}
-            >
-              {/* Image layer */}
-              <div className="absolute inset-0">
-                <img
-                  src={commodity.image}
-                  alt={commodity.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          {FEATURED_COMMODITIES.map((commodity) => (
+            <motion.div key={commodity.slug} variants={cardVariants}>
+              <Link
+                href={`/commodities/${commodity.slug}`}
+                onMouseEnter={() => setHovered(commodity.slug)}
+                onMouseLeave={() => setHovered(null)}
+                className="relative overflow-hidden rounded-card border border-border group block"
+                style={{ minHeight: '280px' }}
+              >
+                <div className="absolute inset-0">
+                  <CommodityImage
+                    commodity={commodity}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,12,20,0.95)_0%,rgba(8,12,20,0.5)_60%,rgba(8,12,20,0.1)_100%)]" />
+                </div>
+
+                <div className="relative z-10 p-6 h-full flex flex-col justify-end" style={{ minHeight: '280px' }}>
+                  <p className="font-mono text-[10px] tracking-[0.2em] text-gold uppercase mb-1">
+                    {commodity.origin}
+                  </p>
+                  <h3 className="font-display text-2xl font-medium text-text-primary mb-2">
+                    {commodity.name}
+                  </h3>
+                  <motion.p
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={
+                      hovered === commodity.slug
+                        ? { opacity: 1, height: 'auto' }
+                        : { opacity: 0, height: 0 }
+                    }
+                    transition={{ duration: 0.3 }}
+                    className="text-text-secondary text-sm leading-relaxed overflow-hidden"
+                  >
+                    {commodity.shortDescription}
+                  </motion.p>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: hovered === commodity.slug ? 1 : 0 }}
+                  className="absolute inset-0 rounded-card border border-gold pointer-events-none"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,12,20,0.95)_0%,rgba(8,12,20,0.5)_60%,rgba(8,12,20,0.1)_100%)]" />
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                <p className="font-mono text-[10px] tracking-[0.2em] text-gold uppercase mb-1">
-                  {commodity.origin}
-                </p>
-                <h3 className="font-display text-2xl font-medium text-text-primary mb-2">
-                  {commodity.name}
-                </h3>
-                <motion.p
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={
-                    hovered === commodity.slug
-                      ? { opacity: 1, height: 'auto' }
-                      : { opacity: 0, height: 0 }
-                  }
-                  transition={{ duration: 0.3 }}
-                  className="text-text-secondary text-sm leading-relaxed overflow-hidden"
-                >
-                  {commodity.description}
-                </motion.p>
-              </div>
-
-              {/* Gold border on hover */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: hovered === commodity.slug ? 1 : 0 }}
-                className="absolute inset-0 rounded-card border border-gold pointer-events-none"
-              />
+              </Link>
             </motion.div>
           ))}
         </motion.div>
