@@ -68,9 +68,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
-      <body className="bg-surface-base text-text-primary antialiased">
+      <body
+        suppressHydrationWarning
+        className="bg-surface-base text-text-primary antialiased"
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />

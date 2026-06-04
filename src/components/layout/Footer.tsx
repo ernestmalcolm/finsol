@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { Logo } from '@/components/shared/Logo'
 import { SITE, NAV_LINKS } from '@/lib/constants'
 
 export function Footer() {
@@ -14,11 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <span className="font-display text-2xl font-semibold tracking-wide text-gold">
-                FINSOL T LTD
-              </span>
-            </Link>
+            <Logo className="mb-4" imgClassName="h-11 w-auto" />
             <p className="font-mono text-xs tracking-[0.2em] text-text-muted uppercase mb-4">
               Bridging Capital. Unlocking Africa.
             </p>

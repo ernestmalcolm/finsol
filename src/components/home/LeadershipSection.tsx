@@ -15,7 +15,7 @@ type TeamMember = {
 const TEAM: TeamMember[] = [
   {
     name: 'Reinfrida Mmbando',
-    role: 'Managing Director',
+    role: 'Managing Partner',
     photo: '/images/team/reinfrida-mmbando.jpg',
     bio: 'Driven by Purpose. Defined by Results. A seasoned leader with over 30 years of experience, including 10 years of specialised expertise in international trade finance, business consultancy, and commodity brokerage — alongside three decades in the construction industry. As a Strategic Architect, Reinfrida brings a proven track record in structuring complex cross-border trade instruments (DLC/SBLC), mitigating risk for both exporters and investors. Her professional career has been defined by one goal: transforming raw potential into bankable, scalable international trade. She operates with the precision that the Brazilian market demands — ensuring that Tanzanian commodities don\'t just reach the Port of Santos, but arrive meeting the highest global standards. With 30 years of hands-on construction industry experience shaping her discipline and attention to detail, Reinfrida consistently delivers complex projects on time and to the highest quality. Her strong understanding of international markets, regulations, and trade flows makes her a results-focused leader committed to delivering value, reducing risk, and unlocking opportunities for sustainable growth.',
   },
@@ -32,9 +32,9 @@ const TEAM: TeamMember[] = [
     bio: 'An accomplished Senior Executive and Financial Engineering Specialist with over 25 years of experience driving digital transformation and investment facilitation across Southern and East Africa. Currently serving as Managing Partner at Finsol Financial Management in Tanzania and Regional Business Development Executive for Africa Due Diligence (ADD), he specialises in connecting international funders with verified projects across 13 African countries. His leadership background includes roles as Innovations Director at the Royal Bank of Africa (DRC) and Director at Sunetrix Engineering in Zimbabwe. Holding an M.Sc. in Computer Science and international certifications in cybersecurity and cloud architecture, Philip is dedicated to transforming Africa\'s business ecosystem through strategic innovation, rigorous due diligence, and sustainable growth.',
   },
   {
-    name: 'Nicole Kyakula',
+    name: 'Nicole Raymond',
     role: 'Sales & Marketing',
-    photo: null,
+    photo: '/images/team/nicole-raymond.jpg',
     bio: '',
   },
   {

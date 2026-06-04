@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { NAV_LINKS } from '@/lib/constants'
+import { Logo } from '@/components/shared/Logo'
 import { cn } from '@/lib/utils'
 
 export function Navbar() {
@@ -32,11 +33,7 @@ export function Navbar() {
     >
       <nav className="section-container flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-display text-xl font-semibold tracking-wide text-gold group-hover:text-gold-light transition-colors">
-            FINSOL T LTD
-          </span>
-        </Link>
+        <Logo />
 
         {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-1">
