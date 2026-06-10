@@ -21,6 +21,7 @@ export const NAV_LINKS = [
       { label: 'Financial Structuring', href: '/services/financial-structuring' },
       { label: 'Commodity Brokerage',   href: '/services/commodity-brokerage' },
       { label: 'Due Diligence',         href: '/services/due-diligence' },
+      { label: 'Funding Solutions',     href: '/services/funding-solutions' },
     ],
   },
   { label: 'Commodities', href: '/commodities' },
@@ -61,10 +62,19 @@ export const SERVICES = [
     slug:        'due-diligence',
     icon:        'Search',
     title:       'Regional Due Diligence',
-    short:       'Providing in-depth risk assessment and market intelligence for informed decisions.',
-    description: 'Finsol provides comprehensive due diligence — covering political and regulatory risk, counterparty verification, market sizing, sector analysis, and competitive landscape mapping across our seven operating markets. Engagements are aligned with Africa Due Diligence (ADD) standards, and preliminary onboarding includes KYC and validation through the ADD platform before formal collaboration.',
-    audience:    'Any international business or investor conducting first-entry or expansion into East, Central, or West Africa.',
-    outputs:     ['Risk reports', 'Counterparty assessments', 'Market entry frameworks', 'Regulatory compliance reviews'],
+    short:       'ADD Provider™-verified risk assessment, KYC/KYB counterparty intelligence, and market entry frameworks across seven African markets.',
+    description: 'Finsol operates as an ADD Provider™ on the Africa Due Diligence platform — the Gold Standard for African Business Intelligence™. Our due diligence engagements cover political and regulatory risk, counterparty KYC and KYB verification, market sizing, sector analysis, and competitive landscape mapping across our seven operating markets. Every engagement begins with onboarding through the ADD platform: identity and business verification is completed within 48 hours, giving both parties a verified foundation before formal collaboration begins.',
+    audience:    'International businesses (ADD Seekers™) conducting first-entry or expansion into East, Central, or West Africa — and counterparties requiring verified, credible local intelligence.',
+    outputs:     ['Political & regulatory risk reports', 'KYC / KYB counterparty verification', 'Market entry frameworks', 'Sector & competitive analysis', 'ADD-verified onboarding', 'Regulatory compliance reviews'],
+  },
+  {
+    slug:        'funding-solutions',
+    icon:        'Banknote',
+    title:       'Flexible Funding Solutions',
+    short:       'Unsecured capital from US$100k to US$200m — equity, loans, trade finance, and regional instruments across Africa, South Africa, and Namibia.',
+    description: 'We connect businesses with the right capital without the burden of traditional security. Our funding network spans global USD routes — equity investment, corporate loans, trade funding, and LC/SBLC instruments — as well as regional products in South Africa (ZAR) and Namibia (NAD). From a R100k small business loan to a US$200m equity raise, we match your stage, sector, and jurisdiction to the right funding structure and the right funders.',
+    audience:    'SMEs, project developers, commodity traders, and growth-stage companies across Africa seeking unsecured or instrument-backed capital.',
+    outputs:     ['Equity placement (US$100k–$200m)', 'Corporate loan facilitation', 'Trade funding (up to 70% of purchase)', 'LC/SBLC issuance', 'Purchase order funding', 'Invoice discounting', 'Small business loans', 'Credit insurance', 'Guarantees & bonds'],
   },
 ]
 
@@ -139,6 +149,72 @@ export const REGIONS = [
   },
 ]
 
+// ─── FUNDING PRODUCTS ─────────────────────────────────────────────────────────
+export const FUNDING_PRODUCTS = [
+  {
+    category: 'Global & USD Routes',
+    currency: 'USD',
+    products: [
+      { name: 'Equity Investment',    range: 'US$ 100k – US$ 200m', note: 'Requires: Pitch Deck' },
+      { name: 'Corporate Loan',       range: 'US$ 3m – US$ 100m',   note: 'Requires: Detailed Business Plan' },
+      { name: 'Trade Funding',        range: 'US$ 1.5m – US$ 25m',  note: 'Max 70% of purchase amount' },
+      { name: 'LC / SBLC Services',   range: 'Min US$ 100k',         note: 'Sight & usance; goods coverage' },
+    ],
+  },
+  {
+    category: 'South Africa',
+    currency: 'ZAR',
+    products: [
+      { name: 'Purchase Order Funding', range: 'R 400k – R 10m', note: 'For goods procurement' },
+      { name: 'Invoice Discounting',    range: 'R 350k – R 10m', note: 'Unlock unpaid invoice value' },
+      { name: 'Small Business Loans',   range: 'R 100k – R 6m',  note: '' },
+    ],
+  },
+  {
+    category: 'Namibia',
+    currency: 'NAD',
+    products: [
+      { name: 'Small Business Loans', range: 'N$ 100k – N$ 6m', note: '' },
+    ],
+  },
+  {
+    category: 'Specialized Instruments',
+    currency: '',
+    products: [
+      { name: 'Credit Insurance',   range: '', note: 'Protect accounts receivable against non-payment', badge: 'NEW' as const },
+      { name: 'Guarantees & Bonds', range: '', note: 'Tender Guarantees, Performance Bonds, Advance Payment Guarantees' },
+    ],
+  },
+]
+
+// ─── PITCH DECK GUIDE ─────────────────────────────────────────────────────────
+export const PITCH_DECK_GUIDE = {
+  title:    'Mastering Your Investment Pitch Deck',
+  subtitle: 'Required for Equity Investment applications (US$100k – US$200m)',
+  intro:    'The primary goal of your pitch deck is not to secure final funding on the spot — it is to spark investor interest and secure the next step: a Q&A discussion. Keep it short: 10–12 slides delivered over a 5-minute presentation. Build trust, don\'t try to educate.',
+  slides: [
+    { label: 'Cover Slide',              desc: 'Company name, country, and a brief snapshot of the opportunity.' },
+    { label: 'Executive Summary',        desc: 'Funding amount requested, Return on Investment (ROI), and key financial metrics.' },
+    { label: 'Business Opportunity',     desc: 'Problem, solution, pricing, market size (TAM, SAM, SOM), and competitor analysis. 2–3 slides.' },
+    { label: 'Leadership Team',          desc: 'Full-time Directors, relevant experience, and professional photos.' },
+    { label: 'Use of Funds',             desc: 'Specific amount (no ranges), broken down with a clear pie chart.' },
+    { label: 'Financial Projections',    desc: '3–5 year annual Revenue & Profit shown as a clean graph.' },
+    { label: 'Closing Slide',            desc: '"Thank You," contact info, and a clear invitation for input.' },
+  ],
+  investorChecklist: [
+    { point: 'Clear Milestones',       desc: 'What exactly will this round accomplish over the next 9–18 months?' },
+    { point: 'Traction Over Concepts', desc: 'Show current revenue, profit, customers — or MVPs, LOIs, and architect drawings if early-stage.' },
+    { point: 'Tangibility',            desc: 'Include geographic maps. Location impacts logistics, demand, and raw materials.' },
+    { point: 'Accountability',         desc: 'Only feature full-time leaders who are legally accountable for investor capital.' },
+  ],
+  designRules: [
+    'Use large fonts, short bullet points — max 6 bullets, 6 words each. Let them listen, not read.',
+    'Round all figures to the nearest 10,000 or 100,000 in US$, £ Sterling, or Euros.',
+    'Classify staff costs under functional areas (Marketing, Operations) — not as general salaries.',
+  ],
+  prepNote: 'Raising large unsecured rounds typically requires a preparation budget of US$4,000–US$5,000 to cover legal and structuring fees.',
+}
+
 // ─── FINANCIAL INSTRUMENTS ────────────────────────────────────────────────────
 export const INSTRUMENTS = [
   { acronym: 'SBLC', name: 'Standby Letters of Credit',     desc: 'Bank-backed payment guarantees that protect sellers if a buyer defaults.' },
@@ -166,10 +242,21 @@ export const VALUES = [
 // ─── AFRICA DUE DILIGENCE (ADD) ───────────────────────────────────────────────
 export const ADD_VERIFICATION = {
   platformUrl: 'https://africaduediligence.com',
+  tagline:     'The Gold Standard for African Business Intelligence™',
   verifiedStatement:
-    'Finsol T Ltd is verified by Africa Due Diligence (ADD) — an independent platform for KYC, counterparty validation, and risk intelligence across African markets.',
+    'Finsol T Ltd is an ADD Provider™ — verified by Africa Due Diligence (ADD), the AI-powered platform for KYC, KYB, counterparty validation, and risk intelligence across Africa\'s 54 markets.',
+  ecosystem: [
+    { role: 'ADD Seekers™',   desc: 'International businesses and investors entering African markets.' },
+    { role: 'ADD Providers™', desc: 'African enterprises like Finsol, verified and listed on the platform.' },
+    { role: 'ADD Verifiers™', desc: 'Independent on-the-ground experts conducting the vetting process.' },
+  ],
+  onboardingSteps: [
+    { step: '01', title: 'Download the ADD App',        desc: 'Available on iOS and Android from africaduediligence.com.' },
+    { step: '02', title: 'Video ID & Photo Submission', desc: 'Record a short video identification and submit a photo for verification.' },
+    { step: '03', title: 'Account Approval',            desc: 'Verification completes within 48 hours — both parties are verified before any formal engagement begins.' },
+  ],
   preliminaryStage:
-    'Before we work together, every engagement begins with a preliminary onboarding stage: identity verification (KYC), business validation, and counterparty checks conducted through the Africa Due Diligence platform. This protects all parties and ensures every introduction is built on verified foundations.',
+    'Before we work together, every engagement begins with a preliminary onboarding stage: identity verification (KYC), business validation (KYB), and counterparty checks conducted through the Africa Due Diligence platform. This protects all parties and ensures every introduction is built on verified foundations.',
   recommendation:
     'We recommend and prefer working with businesses that are verified by Africa Due Diligence. ADD-verified counterparties benefit from faster onboarding, stronger institutional confidence, and smoother cross-border transaction structuring.',
 }

@@ -35,7 +35,7 @@ const TEAM: TeamMember[] = [
     name: 'Nicole Raymond',
     role: 'Sales & Marketing',
     photo: '/images/team/nicole-raymond.jpg',
-    bio: '',
+    bio: 'A results-driven marketing professional with experience in brand communication, stakeholder engagement, and strategic marketing across corporate and financial sectors. Passionate about building meaningful brand connections, driving visibility, and delivering impactful campaigns that support business growth. At Finsol, Nicole is responsible for strengthening brand presence, supporting marketing initiatives, and fostering strong client relationships through innovative, purpose-driven communication.',
   },
   {
     name: 'Ernest Mwinchumu',
