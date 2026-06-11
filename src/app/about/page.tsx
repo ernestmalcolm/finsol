@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { PageHero }       from '@/components/shared/PageHero'
-import { StorySection }   from '@/components/about/StorySection'
+import { AboutHero }      from '@/components/about/AboutHero'
 import { ValuesSection }  from '@/components/about/ValuesSection'
 import { LeadershipSection } from '@/components/home/LeadershipSection'
 import { PartnersSection } from '@/components/about/PartnersSection'
@@ -19,13 +18,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About Finsol T Ltd"
-        title="A Different Kind of African Advisory Firm"
-        subtitle="We combine deep local market knowledge with institutional-grade financial expertise — built entirely for the African opportunity."
-      />
-      <StorySection />
-      <ValuesSection />
+      <AboutHero />
+      {/* pt-16 clears the overlapping pillar cards from the hero */}
+      <div className="pt-16">
+        <ValuesSection />
+      </div>
       <LeadershipSection />
       <VerificationSection />
       <PartnersSection />

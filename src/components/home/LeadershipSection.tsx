@@ -22,7 +22,7 @@ const TEAM: TeamMember[] = [
   {
     name: 'Grayson Emmanuel Mmbando',
     role: 'Managing Director',
-    photo: null,
+    photo: '/images/team/grayson-emmanuel-mmbando.jpg',
     bio: 'Grayson Emmanuel Mmbando is a Co-Founder of FinSol and a results-driven Trade & Investment Strategist specialising in cross-border trade facilitation, financial modelling, and risk management across sub-Saharan Africa. With a sharp analytical focus, Grayson bridges the gap between raw commercial concepts and bankable, investor-ready business plans that attract both local banking partnerships and international financing. At FinSol, Grayson oversees the firm\'s commodity traders portfolio, driving value through strategic financial packaging and rigorous due diligence frameworks. Driven by a deep passion for the agricultural commodity business and regional logistics, he architects end-to-end import/export frameworks and structures precise FOB/CIF pricing models to ensure African products seamlessly enter global corridors. His expertise ensures that agribusiness, mineral, and infrastructure projects fully comply with strict European, Middle Eastern, and global market standards. Grayson\'s background includes a powerful track record in risk mitigation; during his tenure as a Trade Analyst at Stochastics Africa, he successfully implemented rigorous corporate verification protocols that delivered an 86% reduction in downside financial exposure. Armed with an academic background from the Tanzania Institute of Bankers, Grayson is dedicated to unlocking high-yield export opportunities and protecting partner and client assets from transactional friction.',
   },
   {
