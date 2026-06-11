@@ -13,17 +13,7 @@ export const SITE = {
 // ─── NAVIGATION ──────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: 'About', href: '/about' },
-  {
-    label: 'Services',
-    href: '/services',
-    children: [
-      { label: 'Strategic Advisory',    href: '/services/strategic-advisory' },
-      { label: 'Financial Structuring', href: '/services/financial-structuring' },
-      { label: 'Commodity Brokerage',   href: '/services/commodity-brokerage' },
-      { label: 'Due Diligence',         href: '/services/due-diligence' },
-      { label: 'Funding Solutions',     href: '/services/funding-solutions' },
-    ],
-  },
+  { label: 'Services', href: '/services' },
   { label: 'Commodities', href: '/commodities' },
   { label: 'Regions',     href: '/regions' },
   { label: 'Contact',     href: '/contact' },
@@ -32,12 +22,24 @@ export const NAV_LINKS = [
 // ─── SERVICES ─────────────────────────────────────────────────────────────────
 export const SERVICES = [
   {
+    slug:        'funding-solutions',
+    icon:        'Banknote',
+    core:        true,
+    title:       'Flexible Funding Solutions',
+    short:       'Unsecured capital from US$100k to US$200m — equity, loans, trade finance, and regional instruments across Africa, South Africa, and Namibia.',
+    description: 'We connect businesses with the right capital without the burden of traditional security. Our funding network spans global USD routes — equity investment, corporate loans, trade funding, and LC/SBLC instruments — as well as regional products in South Africa (ZAR) and Namibia (NAD). From a R100k small business loan to a US$200m equity raise, we match your stage, sector, and jurisdiction to the right funding structure and the right funders.',
+    audience:    'SMEs, project developers, commodity traders, and growth-stage companies across Africa seeking unsecured or instrument-backed capital.',
+    bullets:     ['Equity access from US$100k to US$200m — no traditional security required', 'Regional instruments in ZAR and NAD covering South Africa and Namibia', 'Backed by credentialed global financing partners with a proven institutional track record'],
+    outputs:     ['Equity placement (US$100k–$200m)', 'Corporate loan facilitation', 'Trade funding (up to 70% of purchase)', 'LC/SBLC issuance', 'Purchase order funding', 'Invoice discounting', 'Small business loans', 'Credit insurance', 'Guarantees & bonds'],
+  },
+  {
     slug:        'strategic-advisory',
     icon:        'Target',
     title:       'Strategic Advisory & Deal Origination',
     short:       'Identifying and qualifying high-potential projects in infrastructure, agriculture, energy and minerals.',
     description: 'We identify, evaluate, and qualify high-potential investment opportunities across infrastructure, agriculture, energy, and minerals in Africa. Our deal origination process is rigorous — we bring only vetted, bankable opportunities to our international partners, saving time and reducing risk at every stage.',
     audience:    'International investors, private equity funds, development finance institutions, and family offices seeking structured African exposure.',
+    bullets:     ['Rigorous deal screening — only bankable, vetted opportunities reach our partners', 'Coverage across infrastructure, agriculture, energy, and minerals', 'End-to-end origination from identification through to partner introduction'],
     outputs:     ['Investment memoranda', 'Deal term sheets', 'Project feasibility summaries', 'Partner introductions'],
   },
   {
@@ -47,6 +49,7 @@ export const SERVICES = [
     short:       'Structuring secure transactions using DLC, SBLC, Bank Guarantees, asset financing, and other financial instruments.',
     description: 'We design and implement financial structures that make cross-border transactions secure, compliant, and executable. Our expertise covers the full range of international trade finance instruments, ensuring that both buyers and sellers are protected from origination through to settlement.',
     audience:    'Importers, exporters, project developers, and commodity buyers and sellers operating across borders.',
+    bullets:     ['Full suite of trade finance instruments: DLC, SBLC, Bank Guarantees', 'Both buyer and seller protected from origination through to settlement', 'Compliant, executable structures for cross-border transactions of any size'],
     outputs:     ['DLC', 'SBLC', 'Bank Guarantees', 'Tripartite Agreements', 'Asset Financing'],
   },
   {
@@ -56,6 +59,7 @@ export const SERVICES = [
     short:       'Sourcing and managing premium agricultural commodities and minerals with end-to-end supply chain solutions.',
     description: 'We source, verify, and broker premium African commodities from trusted producer networks in Tanzania and across East and Central Africa — including coffee, sesame, vanilla, cashew, sisal, grains, and industrial minerals. We manage the entire process from origin verification to delivery: quality certification, seasonal contract planning, logistics coordination, and trade finance arrangement. Whether you are securing a sesame harvest window or building a long-term vanilla supply relationship, our on-the-ground networks give you verified origin, certified quality, and executable contracts.',
     audience:    'International commodity buyers, importers, trading houses, food manufacturers, flavour houses, and industrial processors seeking reliable African agricultural supply.',
+    bullets:     ['20+ verified agricultural commodities across Tanzania and East Africa', 'Origin verification, quality certification, and seasonal contract planning included', 'Integrated logistics coordination and trade finance — one partner, full supply chain'],
     outputs:     ['Source verification', 'Quality certification', 'Seasonal contract planning', 'Logistics coordination', 'Trade finance arrangement', 'Delivery management'],
   },
   {
@@ -65,16 +69,8 @@ export const SERVICES = [
     short:       'ADD Provider™-verified risk assessment, KYC/KYB counterparty intelligence, and market entry frameworks across seven African markets.',
     description: 'Finsol operates as an ADD Provider™ on the Africa Due Diligence platform — the Gold Standard for African Business Intelligence™. Our due diligence engagements cover political and regulatory risk, counterparty KYC and KYB verification, market sizing, sector analysis, and competitive landscape mapping across our seven operating markets. Every engagement begins with onboarding through the ADD platform: identity and business verification is completed within 48 hours, giving both parties a verified foundation before formal collaboration begins.',
     audience:    'International businesses (ADD Seekers™) conducting first-entry or expansion into East, Central, or West Africa — and counterparties requiring verified, credible local intelligence.',
+    bullets:     ['Finsol is an ADD Provider™ — verified on the Gold Standard African intelligence platform', 'KYC and KYB counterparty checks completed within 48 hours via the ADD platform', 'Political, regulatory, and sector risk coverage across seven operating markets'],
     outputs:     ['Political & regulatory risk reports', 'KYC / KYB counterparty verification', 'Market entry frameworks', 'Sector & competitive analysis', 'ADD-verified onboarding', 'Regulatory compliance reviews'],
-  },
-  {
-    slug:        'funding-solutions',
-    icon:        'Banknote',
-    title:       'Flexible Funding Solutions',
-    short:       'Unsecured capital from US$100k to US$200m — equity, loans, trade finance, and regional instruments across Africa, South Africa, and Namibia.',
-    description: 'We connect businesses with the right capital without the burden of traditional security. Our funding network spans global USD routes — equity investment, corporate loans, trade funding, and LC/SBLC instruments — as well as regional products in South Africa (ZAR) and Namibia (NAD). From a R100k small business loan to a US$200m equity raise, we match your stage, sector, and jurisdiction to the right funding structure and the right funders.',
-    audience:    'SMEs, project developers, commodity traders, and growth-stage companies across Africa seeking unsecured or instrument-backed capital.',
-    outputs:     ['Equity placement (US$100k–$200m)', 'Corporate loan facilitation', 'Trade funding (up to 70% of purchase)', 'LC/SBLC issuance', 'Purchase order funding', 'Invoice discounting', 'Small business loans', 'Credit insurance', 'Guarantees & bonds'],
   },
 ]
 
@@ -186,6 +182,17 @@ export const FUNDING_PRODUCTS = [
     ],
   },
 ]
+
+// ─── FUNDING PARTNERS ─────────────────────────────────────────────────────────
+export const FUNDING_PARTNERS = {
+  headline:   'Backed by Credentialed Global Financing Partners',
+  body:       'We structure and facilitate funding access in partnership with a global network of institutional funders, accredited investment firms, and specialist capital providers — each vetted for credibility, track record, and the ability to deploy capital into African markets. Our financing partners bring decades of institutional-grade advisory experience, a proven record across complex cross-border transactions, and established relationships with equity investors, development finance institutions, and trade finance desks operating globally.',
+  highlights: [
+    { label: 'Institutional grade',   desc: 'Every funding route is structured to meet the documentation and compliance standards that international funders require.' },
+    { label: 'Proven track record',   desc: 'Partners with decades of cross-border transaction advisory experience and an unblemished record on bankable business plans.' },
+    { label: 'Global capital reach',  desc: 'Access to equity investors, development finance institutions, and trade finance providers operating across multiple markets.' },
+  ],
+}
 
 // ─── PITCH DECK GUIDE ─────────────────────────────────────────────────────────
 export const PITCH_DECK_GUIDE = {

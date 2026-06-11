@@ -37,49 +37,52 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-1">
-          {NAV_LINKS.map((link) => (
-            <li
-              key={link.href}
-              className="relative"
-              onMouseEnter={() => link.children && setActiveDropdown(link.label)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link
-                href={link.href}
-                className={cn(
-                  'flex items-center gap-1 px-4 py-2 text-sm font-body font-medium transition-colors rounded-md',
-                  pathname.startsWith(link.href) && link.href !== '/'
-                    ? 'text-gold'
-                    : 'text-text-secondary hover:text-text-primary'
-                )}
+          {NAV_LINKS.map((link) => {
+            const hasChildren = 'children' in link && Array.isArray(link.children)
+            return (
+              <li
+                key={link.href}
+                className="relative"
+                onMouseEnter={() => hasChildren && setActiveDropdown(link.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {link.label}
-                {link.children && <ChevronDown className="w-3.5 h-3.5" />}
-              </Link>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    'flex items-center gap-1 px-4 py-2 text-sm font-body font-medium transition-colors rounded-md',
+                    pathname.startsWith(link.href) && link.href !== '/'
+                      ? 'text-gold'
+                      : 'text-text-secondary hover:text-text-primary'
+                  )}
+                >
+                  {link.label}
+                  {hasChildren && <ChevronDown className="w-3.5 h-3.5" />}
+                </Link>
 
-              <AnimatePresence>
-                {link.children && activeDropdown === link.label && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 w-56 bg-surface-card border border-border-gold rounded-card p-2 shadow-xl"
-                  >
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-3 py-2 text-sm text-text-secondary hover:text-gold hover:bg-[rgba(201,168,76,0.05)] rounded-md transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </li>
-          ))}
+                <AnimatePresence>
+                  {hasChildren && activeDropdown === link.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-1 w-56 bg-surface-card border border-border-gold rounded-card p-2 shadow-xl"
+                    >
+                      {(link as { label: string; href: string; children: { label: string; href: string }[] }).children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="block px-3 py-2 text-sm text-text-secondary hover:text-gold hover:bg-[rgba(201,168,76,0.05)] rounded-md transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </li>
+            )
+          })}
         </ul>
 
         {/* Desktop CTA */}

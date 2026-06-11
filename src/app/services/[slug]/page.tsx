@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Target, Shield, Package, Search, Banknote, ShieldCheck, BookOpen, CheckCircle2, ArrowRight } from 'lucide-react'
-import { SERVICES, AGRICULTURAL_PRODUCTS, AGRIBUSINESS_SEO, FUNDING_PRODUCTS, ADD_VERIFICATION, PITCH_DECK_GUIDE } from '@/lib/constants'
+import { SERVICES, AGRICULTURAL_PRODUCTS, AGRIBUSINESS_SEO, FUNDING_PRODUCTS, FUNDING_PARTNERS, ADD_VERIFICATION, PITCH_DECK_GUIDE } from '@/lib/constants'
 import { metadataAlternates } from '@/lib/seo'
 import { PageHero }    from '@/components/shared/PageHero'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
@@ -49,7 +49,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <PageHero
-        eyebrow="Our Services"
+        eyebrow={slug === 'funding-solutions' ? 'Core Product' : 'Our Services'}
         title={service.title}
         subtitle={service.short}
       />
@@ -135,7 +135,7 @@ export default async function ServicePage({ params }: Props) {
                 <ScrollReveal delay={0.2}>
                   <div className="card-dark p-8">
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-md bg-[rgba(201,168,76,0.1)] text-gold">
+                      <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-md bg-[rgba(201,168,76,0.1)] text-gold">
                         <ShieldCheck className="w-5 h-5" />
                       </div>
                       <div>
@@ -170,7 +170,7 @@ export default async function ServicePage({ params }: Props) {
                     <div className="space-y-4 mb-8">
                       {ADD_VERIFICATION.onboardingSteps.map((item) => (
                         <div key={item.step} className="flex gap-4 items-start">
-                          <span className="font-mono text-xs text-gold min-w-[2rem]">{item.step}</span>
+                          <span className="font-mono text-xs text-gold min-w-8">{item.step}</span>
                           <div>
                             <p className="text-text-primary text-sm font-medium">{item.title}</p>
                             <p className="text-text-muted text-xs mt-0.5 leading-relaxed">{item.desc}</p>
@@ -193,10 +193,34 @@ export default async function ServicePage({ params }: Props) {
 
               {slug === 'funding-solutions' && (
                 <>
+                  {/* About Our Partners */}
                   <ScrollReveal delay={0.2}>
+                    <div className="card-dark p-8">
+                      <h3 className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-6">
+                        About Our Partners
+                      </h3>
+                      <p className="text-text-secondary leading-relaxed mb-8">
+                        {FUNDING_PARTNERS.body}
+                      </p>
+                      <div className="grid sm:grid-cols-3 gap-4">
+                        {FUNDING_PARTNERS.highlights.map((h) => (
+                          <div
+                            key={h.label}
+                            className="p-4 rounded-md bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]"
+                          >
+                            <p className="text-gold font-mono text-xs font-medium mb-2">{h.label}</p>
+                            <p className="text-text-muted text-xs leading-relaxed">{h.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </ScrollReveal>
+
+                  {/* Flexible Funding Solutions — product matrix */}
+                  <ScrollReveal delay={0.25}>
                     <div className="space-y-4">
                       <h3 className="font-mono text-xs tracking-[0.25em] text-gold uppercase">
-                        Funding Products
+                        Flexible Funding Solutions
                       </h3>
                       {FUNDING_PRODUCTS.map((cat) => (
                         <div key={cat.category} className="card-dark p-8">
@@ -248,29 +272,28 @@ export default async function ServicePage({ params }: Props) {
                     </div>
                   </ScrollReveal>
 
-                  <ScrollReveal delay={0.25}>
-                    <div className="card-dark p-8 border-l-2 border-gold/30">
+                  {/* Investment Pitch Deck — suggestions */}
+                  <ScrollReveal delay={0.3}>
+                    <div className="card-dark p-8 border-l-2 border-[rgba(201,168,76,0.3)]">
                       <div className="flex items-start gap-4 mb-6">
                         <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-md bg-[rgba(201,168,76,0.1)] text-gold">
                           <BookOpen className="w-5 h-5" />
                         </div>
                         <div>
                           <p className="font-mono text-[10px] text-gold tracking-wider uppercase mb-1">
-                            Resource Guide
+                            Investment Pitch Deck
                           </p>
                           <h3 className="text-text-primary font-medium">{PITCH_DECK_GUIDE.title}</h3>
                           <p className="text-text-muted text-xs mt-1">{PITCH_DECK_GUIDE.subtitle}</p>
                         </div>
                       </div>
-
                       <p className="text-text-secondary text-sm leading-relaxed mb-8">
                         {PITCH_DECK_GUIDE.intro}
                       </p>
-
                       <h4 className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-4">
                         Winning Slide Formula
                       </h4>
-                      <div className="space-y-3 mb-8">
+                      <div className="space-y-3">
                         {PITCH_DECK_GUIDE.slides.map((slide, i) => (
                           <div key={slide.label} className="flex gap-4 items-start">
                             <span className="font-mono text-xs text-gold min-w-8">
@@ -283,10 +306,15 @@ export default async function ServicePage({ params }: Props) {
                           </div>
                         ))}
                       </div>
+                    </div>
+                  </ScrollReveal>
 
-                      <h4 className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-4">
-                        What Investors Look For
-                      </h4>
+                  {/* Investment Funders Requirements */}
+                  <ScrollReveal delay={0.35}>
+                    <div className="card-dark p-8">
+                      <h3 className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-6">
+                        What Funders Require
+                      </h3>
                       <div className="grid sm:grid-cols-2 gap-3 mb-8">
                         {PITCH_DECK_GUIDE.investorChecklist.map((item) => (
                           <div
@@ -301,7 +329,6 @@ export default async function ServicePage({ params }: Props) {
                           </div>
                         ))}
                       </div>
-
                       <div className="p-4 rounded-md bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.15)]">
                         <p className="text-text-muted text-xs leading-relaxed">
                           <span className="text-gold font-medium">Preparation note — </span>
@@ -328,7 +355,7 @@ export default async function ServicePage({ params }: Props) {
                       href={`/services/${s.slug}`}
                       className="card-dark p-5 flex gap-3 items-start group hover:border-[rgba(201,168,76,0.4)] border border-transparent transition-colors duration-300 mb-3 block"
                     >
-                      <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-md bg-[rgba(201,168,76,0.1)] text-gold">
+                      <div className="w-8 h-8 shrink-0 flex items-center justify-center rounded-md bg-[rgba(201,168,76,0.1)] text-gold">
                         <OtherIcon className="w-4 h-4" />
                       </div>
                       <div>
