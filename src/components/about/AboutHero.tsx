@@ -12,7 +12,7 @@ const PILLARS = [
   {
     label: 'Approach',
     title: 'Rigorous. Transparent.',
-    text:  'Every engagement is built on verified foundations — KYC, KYB, and ADD-certified onboarding before any transaction begins.',
+    text:  'Every engagement is built on verified foundations — KYC, KYB, and ADD-certified onboarding before any engagement begins.',
   },
   {
     label: 'Mission',
