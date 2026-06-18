@@ -26,11 +26,11 @@ export const SERVICES = [
     icon:        'Banknote',
     core:        true,
     title:       'Flexible Funding Solutions',
-    short:       'Unsecured capital from US$100k to US$200m — equity, loans, trade finance, and regional instruments across Africa, South Africa, and Namibia.',
-    description: 'We connect businesses with the right capital without the burden of traditional security. Our funding network spans global USD routes — equity investment, corporate loans, trade funding, and LC/SBLC instruments — as well as regional products in South Africa (ZAR) and Namibia (NAD). From a R100k small business loan to a US$200m equity raise, we match your stage, sector, and jurisdiction to the right funding structure and the right funders.',
-    audience:    'SMEs, project developers, commodity traders, and growth-stage companies across Africa seeking unsecured or instrument-backed capital.',
-    bullets:     ['Equity access from US$100k to US$200m — no traditional security required', 'Regional instruments in ZAR and NAD covering South Africa and Namibia', 'Backed by credentialed global financing partners with a proven institutional track record'],
-    outputs:     ['Equity placement (US$100k–$200m)', 'Corporate loan facilitation', 'Trade funding (up to 70% of purchase)', 'LC/SBLC issuance', 'Purchase order funding', 'Invoice discounting', 'Small business loans', 'Credit insurance', 'Guarantees & bonds'],
+    short:       'Unsecured capital from US$100k to US$200m — equity, loans, trade finance, IPP clean energy project funding, and regional instruments across Africa, South Africa, and Namibia.',
+    description: 'We connect businesses with the right capital without the burden of traditional security. Our funding network spans global USD routes — equity investment, corporate loans, trade funding (via 5050 Trade Facility or up to 70%), LC/SBLC instruments, and specialist IPP clean energy project finance — as well as regional products in South Africa (ZAR) and Namibia (NAD). From a R100k small business loan to a US$200m equity raise, we match your stage, sector, and jurisdiction to the right funding structure and the right funders.',
+    audience:    'SMEs, project developers, commodity traders, clean energy IPP developers, and growth-stage companies across Africa seeking unsecured or instrument-backed capital.',
+    bullets:     ['Equity access from US$100k to US$200m — no traditional security required', 'Specialist IPP funding for Independent Power Producer clean energy projects', 'Regional instruments in ZAR and NAD covering South Africa and Namibia', 'Backed by credentialed global financing partners with a proven institutional track record'],
+    outputs:     ['Equity placement (US$100k–$200m)', 'IPP Project Funding (Clean Energy)', 'Corporate loan facilitation', 'Trade funding — 5050 Trade Facility or up to 70%', 'LC/SBLC issuance', 'Purchase order funding', 'Invoice discounting', 'Small business loans', 'Credit insurance', 'Guarantees & bonds'],
   },
   {
     slug:        'strategic-advisory',
@@ -152,8 +152,9 @@ export const FUNDING_PRODUCTS = [
     currency: 'USD',
     products: [
       { name: 'Equity Investment',    range: 'US$ 100k – US$ 200m', note: 'Requires: Pitch Deck' },
+      { name: 'IPP Project Funding',  range: 'Project basis',        note: 'Independent Power Producer — clean energy projects. Requires: 1-page IPP Summary (see requirements below ↓)', badge: 'SPECIALIST' as const },
       { name: 'Corporate Loan',       range: 'US$ 3m – US$ 100m',   note: 'Requires: Detailed Business Plan' },
-      { name: 'Trade Funding',        range: 'US$ 1.5m – US$ 25m',  note: 'Max 70% of purchase amount' },
+      { name: 'Trade Funding',        range: 'US$ 1.5m – US$ 25m',  note: 'Options: 5050 Trade Facility · Up to 70% of purchase amount' },
       { name: 'LC / SBLC Services',   range: 'Min US$ 100k',         note: 'Sight & usance; goods coverage' },
     ],
   },
@@ -220,6 +221,24 @@ export const PITCH_DECK_GUIDE = {
     'Classify staff costs under functional areas (Marketing, Operations) — not as general salaries.',
   ],
   prepNote: 'Raising large unsecured rounds typically requires a preparation budget of US$4,000–US$5,000 to cover legal and structuring fees.',
+}
+
+// ─── IPP FUNDING GUIDE ────────────────────────────────────────────────────────
+export const IPP_GUIDE = {
+  title:    'IPP Project Funding — Independent Power Producer',
+  subtitle: 'Specialist clean energy project finance for private power generators',
+  intro:    'An Independent Power Producer (IPP) is a private entity that develops, owns, and operates electricity generating assets — solar, wind, hydro, gas, or hybrid — and sells power to a utility or offtaker via a Power Purchase Agreement (PPA). This is specialist project finance, distinct from a corporate loan or equity raise, and requires a dedicated funder with deep energy sector expertise.',
+  summaryHeading: 'Our Specialist IPP Funder Requires a 1-Page Summary on Company Letterhead',
+  summaryItems: [
+    { label: 'Revenue',                    desc: 'Current or projected revenue figures for the project entity.' },
+    { label: 'Profits',                    desc: 'Current or projected profit figures.' },
+    { label: 'Funding Required',           desc: 'Total capital requirement for the project.' },
+    { label: 'PPA & Grid Connectivity',    desc: 'Confirmation of the Power Purchase Agreement status and grid connectivity arrangement.' },
+    { label: 'Debt / Equity Split',        desc: 'The financing structure you are targeting — proportion of debt vs equity.' },
+    { label: 'Permit Progress',            desc: 'How far you are with Environmental Impact Assessment (EIA), Water permits, and any other required permits.' },
+  ],
+  signatory:    'The 1-page summary must be signed by the Owner / CEO.',
+  exclusivityNote: 'This funder will request exclusivity once they engage. Specific exceptions can be listed and agreed at the outset.',
 }
 
 // ─── FINANCIAL INSTRUMENTS ────────────────────────────────────────────────────

@@ -118,6 +118,7 @@ export const COMMODITIES: Commodity[] = [
     description:
       'Tanzania produces non-GMO soybeans across the Southern Highlands and Rift Valley regions. We broker soybeans for vegetable oil extraction plants, food manufacturers, and animal feed compounders — with moisture content, protein analysis, and phytosanitary certification available on all shipments.',
     category: 'agriculture',
+    featured: true,
     availability: 'Seasonal with storage carry-over',
     harvestSeason: 'May–August',
     exportPeak: 'September–February',

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Target, Shield, Package, Search, Banknote, ShieldCheck, BookOpen, CheckCircle2, ArrowRight } from 'lucide-react'
-import { SERVICES, AGRICULTURAL_PRODUCTS, AGRIBUSINESS_SEO, FUNDING_PRODUCTS, FUNDING_PARTNERS, ADD_VERIFICATION, PITCH_DECK_GUIDE } from '@/lib/constants'
+import { Target, Shield, Package, Search, Banknote, ShieldCheck, BookOpen, CheckCircle2, ArrowRight, Zap } from 'lucide-react'
+import { SERVICES, AGRICULTURAL_PRODUCTS, AGRIBUSINESS_SEO, FUNDING_PRODUCTS, FUNDING_PARTNERS, ADD_VERIFICATION, PITCH_DECK_GUIDE, IPP_GUIDE } from '@/lib/constants'
 import { metadataAlternates } from '@/lib/seo'
 import { PageHero }    from '@/components/shared/PageHero'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
@@ -255,7 +255,16 @@ export default async function ServicePage({ params }: Props) {
                                   </div>
                                   {product.note && (
                                     <p className="text-text-muted text-xs mt-0.5 leading-relaxed">
-                                      {product.note}
+                                      {product.name === 'IPP Project Funding' ? (
+                                        <>
+                                          Independent Power Producer — clean energy projects.{' '}
+                                          <a href="#ipp-requirements" className="text-gold hover:underline">
+                                            See requirements ↓
+                                          </a>
+                                        </>
+                                      ) : (
+                                        product.note
+                                      )}
                                     </p>
                                   )}
                                 </div>
@@ -269,6 +278,58 @@ export default async function ServicePage({ params }: Props) {
                           </div>
                         </div>
                       ))}
+                    </div>
+                  </ScrollReveal>
+
+                  {/* IPP — Independent Power Producer */}
+                  <ScrollReveal delay={0.28}>
+                    <div id="ipp-requirements" className="card-dark p-8 border-l-2 border-[rgba(201,168,76,0.3)]">
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-md bg-[rgba(201,168,76,0.1)] text-gold">
+                          <Zap className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="font-mono text-[10px] text-gold tracking-wider uppercase mb-1">
+                            Specialist Funding · Clean Energy / Electric Project
+                          </p>
+                          <h3 className="text-text-primary font-medium">{IPP_GUIDE.title}</h3>
+                          <p className="text-text-muted text-xs mt-1">{IPP_GUIDE.subtitle}</p>
+                        </div>
+                      </div>
+                      <p className="text-text-secondary text-sm leading-relaxed mb-8">
+                        {IPP_GUIDE.intro}
+                      </p>
+
+                      <h4 className="font-mono text-xs tracking-[0.25em] text-gold uppercase mb-2">
+                        {IPP_GUIDE.summaryHeading}
+                      </h4>
+                      <div className="space-y-3 mb-6">
+                        {IPP_GUIDE.summaryItems.map((item, i) => (
+                          <div key={item.label} className="flex gap-4 items-start">
+                            <span className="font-mono text-xs text-gold min-w-8">
+                              {String(i + 1).padStart(2, '0')}
+                            </span>
+                            <div>
+                              <span className="text-text-primary text-sm font-medium">{item.label}</span>
+                              <p className="text-text-muted text-xs mt-0.5 leading-relaxed">{item.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mb-4 p-3 rounded-md bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
+                        <p className="text-text-secondary text-xs leading-relaxed">
+                          <span className="text-gold font-medium">Signatory — </span>
+                          {IPP_GUIDE.signatory}
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-md bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.15)]">
+                        <p className="text-text-muted text-xs leading-relaxed italic">
+                          <span className="text-gold font-medium not-italic">Note — </span>
+                          {IPP_GUIDE.exclusivityNote}
+                        </p>
+                      </div>
                     </div>
                   </ScrollReveal>
 

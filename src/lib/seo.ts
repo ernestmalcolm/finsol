@@ -17,6 +17,7 @@ export const FOOTER_COMMODITIES = [
   { label: 'Coffee', href: '/commodities/coffee' },
   { label: 'Cashewnuts', href: '/commodities/cashewnuts' },
   { label: 'Sisal', href: '/commodities/sisal' },
+  { label: 'Soybean', href: '/commodities/soybean' },
   { label: 'Minerals', href: '/commodities/minerals' },
 ]
 

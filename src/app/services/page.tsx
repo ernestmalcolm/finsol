@@ -22,7 +22,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="What We Do"
         title="Our Services"
-        subtitle="Flexible funding is at the heart of what we do — backed by credentialed global partners and complemented by advisory, structuring, brokerage, and due diligence across Africa."
+        subtitle="Flexible funding is at the heart of what we do — backed by credentialed global partners and complemented by advisory, structuring, brokerage, and due diligence across Africa. We broker every type of viable opportunity: if there is a deal to be structured, a commodity to be moved, or capital to be matched, we find the right path."
       />
 
       <section className="py-section bg-surface-base">

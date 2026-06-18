@@ -20,7 +20,8 @@ export function Footer() {
             </p>
             <p className="text-text-secondary text-sm leading-relaxed max-w-sm">
               A premier Strategic Advisory and Financial Structuring firm connecting global
-              investors with high-value African opportunities.
+              investors with high-value African opportunities. We broker every type of viable
+              opportunity — funding, commodities, trade, and beyond.
             </p>
             <div className="mt-6 space-y-2">
               <a
@@ -38,7 +39,7 @@ export function Footer() {
                 {SITE.phone}
               </a>
               <span className="flex items-center gap-2 text-text-secondary text-sm">
-                <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-gold shrink-0" />
                 {SITE.address}
               </span>
             </div>
@@ -68,6 +69,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
+                { label: 'Flexible Funding Solutions', href: '/services/funding-solutions' },
                 { label: 'Strategic Advisory', href: '/services/strategic-advisory' },
                 { label: 'Financial Structuring', href: '/services/financial-structuring' },
                 { label: 'Commodity Brokerage', href: '/services/commodity-brokerage' },
@@ -103,7 +105,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/commodities"
-                  className="text-gold hover:text-gold-light text-sm transition-colors font-mono text-xs tracking-wide"
+                  className="text-gold hover:text-gold-light transition-colors font-mono text-xs tracking-wide"
                 >
                   View all →
                 </Link>
