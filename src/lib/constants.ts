@@ -293,13 +293,13 @@ export const PARTNERS = [
     name:    'Africa Due Diligence (ADD)',
     role:    'Verification and due diligence partner. Finsol T Ltd is ADD-verified, and we use the ADD platform for KYC, counterparty validation, and risk intelligence across African markets.',
     website: 'https://africaduediligence.com',
-    logo:    '/images/partners/add.png',
+    logo:    '/images/partners/add.webp',
   },
   {
     name:    'BeamAfrique',
     role:    "Pan-African media partner for sharing completed investments, deal milestones, and opportunities across the continent — projecting Africa's economic story to a global audience.",
     website: 'https://beamafrique.com',
-    logo:    '/images/partners/beamafrique.jpg',
+    logo:    '/images/partners/beamafrique.webp',
   },
   {
     name:    'Joe Tom Capital',
@@ -311,12 +311,12 @@ export const PARTNERS = [
     name:    'Global Business Roundtable (GBR)',
     role:    'Strategic membership giving our clients access to a robust ecosystem of vetted global professionals.',
     website: 'https://thegbr.org',
-    logo:    '/images/partners/gbr.png',
+    logo:    '/images/partners/gbr.webp',
   },
   {
     name:    'Business Network International (BNI)',
     role:    'Professional network supporting trusted referrals and business development across sectors.',
     website: 'https://www.bni.com',
-    logo:    '/images/partners/bni.png',
+    logo:    '/images/partners/bni.webp',
   },
 ]

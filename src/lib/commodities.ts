@@ -5,7 +5,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'coffee',
     name: 'Coffee',
-    image: '/images/commodities/coffee.jpg',
+    image: '/images/commodities/coffee.webp',
     origin: 'Mount Kilimanjaro & Southern Highlands, Tanzania',
     shortDescription: 'Tanzanian Arabica and Robusta — AA, AB, and specialty grades for global roasters.',
     description:
@@ -23,7 +23,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'cashewnuts',
     name: 'Cashewnuts',
-    image: '/images/commodities/cashewnuts.jpg',
+    image: '/images/commodities/cashewnuts.webp',
     origin: 'Coastal Tanzania — Mtwara, Lindi & Tanga',
     shortDescription: 'Raw and processed cashew from East Africa\'s second-largest producing region.',
     description:
@@ -41,7 +41,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'sisal',
     name: 'Sisal',
-    image: '/images/commodities/sisal.jpg',
+    image: '/images/commodities/sisal.webp',
     origin: 'Tanga & Kilosa regions, Tanzania',
     shortDescription: 'Hard fibre sisal from verified estates — rope, twine, and composite materials.',
     description:
@@ -58,7 +58,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'sesame',
     name: 'Sesame',
-    image: '/images/commodities/sesame.jpg',
+    image: '/images/commodities/sesame.webp',
     origin: 'Central & Southern Tanzania — Dodoma, Singida & Mbeya',
     shortDescription: 'Hulled and natural sesame seeds from Tanzania\'s growing export corridor.',
     description:
@@ -76,7 +76,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'vanilla',
     name: 'Vanilla',
-    image: '/images/commodities/vanilla.jpg',
+    image: '/images/commodities/vanilla.webp',
     origin: 'Uganda & Tanzania — Bundibugyo, Mbale & Tanga',
     shortDescription: 'Planifolia vanilla beans from East Africa\'s expanding premium spice corridor.',
     description:
@@ -96,7 +96,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'maize',
     name: 'Maize',
-    image: '/images/commodities/maize.jpg',
+    image: '/images/commodities/maize.webp',
     origin: 'Southern Highlands & Rift Valley, Tanzania',
     shortDescription: 'White and yellow maize for food processors, millers, and animal feed manufacturers.',
     description:
@@ -112,7 +112,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'soybean',
     name: 'Soybean',
-    image: '/images/commodities/soybean.jpg',
+    image: '/images/commodities/soybean.webp',
     origin: 'Southern Highlands & Rift Valley, Tanzania',
     shortDescription: 'Non-GMO soybeans for oil extraction, food processing, and animal feed.',
     description:
@@ -181,7 +181,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'sunflower',
     name: 'Sunflower Seeds',
-    image: '/images/commodities/sunflower.jpg',
+    image: '/images/commodities/sunflower.webp',
     origin: 'Northern Tanzania — Arusha & Manyara',
     shortDescription: 'Oil-grade sunflower seeds for crushing and food manufacturing.',
     description:
@@ -197,7 +197,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'tea',
     name: 'Tea',
-    image: '/images/commodities/tea.jpg',
+    image: '/images/commodities/tea.webp',
     origin: 'Southern Highlands — Mufindi, Tukuyu & Njombe',
     shortDescription: 'Black CTC and orthodox tea from Tanzania\'s highland estates.',
     description:
@@ -213,7 +213,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'cotton',
     name: 'Cotton',
-    image: '/images/commodities/cotton.jpg',
+    image: '/images/commodities/cotton.webp',
     origin: 'Western Tanzania — Shinyanga, Mwanza & Mara',
     shortDescription: 'Ginned cotton lint from Tanzania\'s lake zone cotton belt.',
     description:
@@ -229,7 +229,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'cloves',
     name: 'Cloves',
-    image: '/images/commodities/cloves.jpg',
+    image: '/images/commodities/cloves.webp',
     origin: 'Zanzibar & Pemba, Tanzania',
     shortDescription: 'Whole and ground cloves from the historic Spice Islands.',
     description:
@@ -247,7 +247,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'minerals',
     name: 'Minerals',
-    image: '/images/commodities/minerals.jpg',
+    image: '/images/commodities/minerals.webp',
     origin: 'Tanzania, Zambia & DRC',
     shortDescription: 'Industrial minerals from verified, licensed mining operations.',
     description:
@@ -264,7 +264,7 @@ export const COMMODITIES: Commodity[] = [
   {
     slug: 'precious-minerals',
     name: 'Precious Minerals',
-    image: '/images/commodities/precious-minerals.jpg',
+    image: '/images/commodities/precious-minerals.webp',
     origin: 'Tanzania & East Africa',
     shortDescription: 'Gold, tanzanite, and coloured gemstones through fully compliant channels.',
     description:

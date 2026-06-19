@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 
@@ -16,31 +17,31 @@ const TEAM: TeamMember[] = [
   {
     name: 'Reinfrida Mmbando',
     role: 'Founder and Managing Partner',
-    photo: '/images/team/reinfrida-mmbando.jpg',
+    photo: '/images/team/reinfrida-mmbando.webp',
     bio: 'Driven by Purpose. Defined by Results. A seasoned leader with over 30 years of experience, including 10 years of specialised expertise in international trade finance, business consultancy, and commodity brokerage — alongside three decades in the construction industry. As a Strategic Architect, Reinfrida brings a proven track record in structuring complex cross-border trade instruments (DLC/SBLC), mitigating risk for both exporters and investors. Her professional career has been defined by one goal: transforming raw potential into bankable, scalable international trade. She operates with the precision that Africa, Europe, India and Middle East markets demand — ensuring that Tanzanian commodities don\'t just reach their ports, but arrive meeting the highest global standards. With 30 years of hands-on construction industry experience shaping her discipline and attention to detail, Reinfrida consistently delivers complex projects on time and to the highest quality. Her strong understanding of international markets, regulations, and trade flows makes her a results-focused leader committed to delivering value, reducing risk, and unlocking opportunities for sustainable growth.',
   },
   {
     name: 'Grayson Emmanuel Mmbando',
     role: 'Partner and Managing Director',
-    photo: '/images/team/grayson-emmanuel-mmbando.jpg',
+    photo: '/images/team/grayson-emmanuel-mmbando.webp',
     bio: 'Grayson Emmanuel Mmbando is a Co-Founder of FinSol and a results-driven Trade & Investment Strategist specialising in cross-border trade facilitation, financial modelling, and risk management across sub-Saharan Africa. With a sharp analytical focus, Grayson bridges the gap between raw commercial concepts and bankable, investor-ready business plans that attract both local banking partnerships and international financing. At FinSol, Grayson oversees the firm\'s commodity traders portfolio, driving value through strategic financial packaging and rigorous due diligence frameworks. Driven by a deep passion for the agricultural commodity business and regional logistics, he architects end-to-end import/export frameworks and structures precise FOB/CIF pricing models to ensure African products seamlessly enter global corridors. His expertise ensures that agribusiness, mineral, and infrastructure projects fully comply with strict European, Middle Eastern, and global market standards. Grayson\'s background includes a powerful track record in risk mitigation; during his tenure as a Trade Analyst at Stochastics Africa, he successfully implemented rigorous corporate verification protocols that delivered an 86% reduction in downside financial exposure. Armed with an academic background from the Tanzania Institute of Bankers, Grayson is dedicated to unlocking high-yield export opportunities and protecting partner and client assets from transactional friction.',
   },
   {
     name: 'Philip Banda',
     role: 'Partner & Business Development',
-    photo: '/images/team/philip-banda.jpg',
+    photo: '/images/team/philip-banda.webp',
     bio: 'An accomplished Senior Executive and Financial Engineering Specialist with over 25 years of experience driving digital transformation and investment facilitation across Southern and East Africa. Currently serving as Managing Partner at Finsol Financial Management in Tanzania and Regional Business Development Executive for Africa Due Diligence (ADD), he specialises in connecting international funders with verified projects across 13 African countries. His leadership background includes roles as Innovations Director at the Royal Bank of Africa (DRC) and Director at Sunetrix Engineering in Zimbabwe. Holding an M.Sc. in Computer Science and international certifications in cybersecurity and cloud architecture, Philip is dedicated to transforming Africa\'s business ecosystem through strategic innovation, rigorous due diligence, and sustainable growth.',
   },
   {
     name: 'Nicole Raymond',
     role: 'Sales & Marketing',
-    photo: '/images/team/nicole-raymond.jpg',
+    photo: '/images/team/nicole-raymond.webp',
     bio: 'A results-driven marketing professional with experience in brand communication, stakeholder engagement, and strategic marketing across corporate and financial sectors. Passionate about building meaningful brand connections, driving visibility, and delivering impactful campaigns that support business growth. At Finsol, Nicole is responsible for strengthening brand presence, supporting marketing initiatives, and fostering strong client relationships through innovative, purpose-driven communication.',
   },
   {
     name: 'Ernest Mwinchumu',
     role: 'Tech Consultant',
-    photo: '/images/team/ernest-mwinchumu-v2.jpg',
+    photo: '/images/team/ernest-mwinchumu-v2.webp',
     bio: 'Ernest is a software engineer and product leader holding a BSc (Hons) in Computer Science from the University of Dar es Salaam. He specialises in frontend and mobile development — working across React, Next.js, TypeScript, and React Native — with a strong eye for UI/UX design and product strategy. He currently serves as Tech Lead at Simplitech, where he owns end-to-end delivery of mobile and web platforms used by tens of thousands of users, spanning product direction, interface design, and cross-functional execution. His career began at Tanzania\'s e-Government Authority, contributing to open-source initiatives and technical research, before joining Simplitech and growing into a leadership role. At FinSol, Ernest covers the full technology brief — from digital presence and product roadmap to vendor evaluation and internal tooling — bringing a product-minded, design-conscious approach to every decision.',
   },
   // {
@@ -139,13 +140,21 @@ export function LeadershipSection() {
                 {/* Photo */}
                 <div className="relative aspect-4/5 rounded-card overflow-hidden border border-border-gold mb-5">
                   {member.photo ? (
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <motion.div
+                      className="absolute inset-0"
+                      initial={{ scale: 1.08, filter: 'blur(10px)' }}
+                      whileInView={{ scale: 1, filter: 'blur(0px)' }}
+                      viewport={{ once: true, margin: '-60px' }}
+                      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.1 + i * 0.05 }}
+                    >
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </motion.div>
                   ) : (
                     <Placeholder name={member.name} />
                   )}

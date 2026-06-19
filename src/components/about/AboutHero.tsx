@@ -28,7 +28,7 @@ export function AboutHero() {
       {/* Background photo */}
       <div className="absolute inset-0">
         <Image
-          src="/images/about-hero.jpg"
+          src="/images/about-hero.webp"
           alt="Aerial view of Dar es Salaam, Tanzania — Finsol's home market"
           fill
           className="object-cover object-center"

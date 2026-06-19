@@ -4,7 +4,7 @@ export function HeroBackground() {
   return (
     <div className="relative w-full h-full">
       <Image
-        src="/images/hero-bg.jpg"
+        src="/images/hero-bg.webp"
         alt="Dar es Salaam port and Indian Ocean coastline, Tanzania"
         fill
         priority
