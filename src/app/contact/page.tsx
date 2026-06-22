@@ -42,12 +42,27 @@ export default function ContactPage() {
   async function onSubmit(data: FormData) {
     setStatus('sending')
     try {
-      const res = await fetch('/api/contact', {
+      // Web3Forms requires client-side submission on the free plan.
+      // The access key is public by design; spam is handled in the dashboard.
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject:    `New Enquiry — ${data.enquiryType} from ${data.company}`,
+          from_name:  `${data.name} (Finsol Website)`,
+          replyto:    data.email,
+          Name:       data.name,
+          Company:    data.company,
+          Email:      data.email,
+          Phone:      data.phone || 'Not provided',
+          Country:    data.country,
+          'Enquiry Type': data.enquiryType,
+          Message:    data.message,
+        }),
       })
-      if (!res.ok) throw new Error()
+      const result = await res.json()
+      if (!res.ok || !result.success) throw new Error()
       setStatus('sent')
       reset()
     } catch {
