@@ -5,7 +5,8 @@ export const SITE = {
   subTagline: 'Strategic Advisory & Financial Structuring for Global Investment in Africa',
   url:        'https://finsoltz.com',
   email:      'info@finsol.africa',
-  phone:      '+255 754 780 467',
+  phone:      '+255 724 092 345',
+  whatsapp:   '+255 724 992 345',
   address:    'Dar es Salaam, Tanzania',
   profilePDF: '/finsol-company-profile.pdf',
 }

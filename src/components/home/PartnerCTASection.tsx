@@ -91,8 +91,17 @@ export function PartnerCTASection() {
             {SITE.email}
           </a>
           <span className="hidden sm:block w-px h-4 bg-border" />
-          <a href={`tel:${SITE.phone}`} className="hover:text-gold transition-colors">
+          <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="hover:text-gold transition-colors">
             {SITE.phone}
+          </a>
+          <span className="hidden sm:block w-px h-4 bg-border" />
+          <a
+            href={`https://wa.me/${SITE.whatsapp.replace(/\s/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold transition-colors"
+          >
+            WhatsApp: {SITE.whatsapp}
           </a>
           <span className="hidden sm:block w-px h-4 bg-border" />
           <span>{SITE.address}</span>

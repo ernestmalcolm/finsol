@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, Phone, MapPin, Send, ShieldCheck } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, ShieldCheck, MessageCircle } from 'lucide-react'
 import { SITE, ADD_VERIFICATION } from '@/lib/constants'
 import { PageHero } from '@/components/shared/PageHero'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
@@ -100,11 +100,20 @@ export default function ContactPage() {
                     <span className="text-sm">{SITE.email}</span>
                   </a>
                   <a
-                    href={`tel:${SITE.phone}`}
+                    href={`tel:${SITE.phone.replace(/\s/g, '')}`}
                     className="flex items-start gap-3 text-text-secondary hover:text-text-primary transition-colors"
                   >
                     <Phone className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                     <span className="text-sm">{SITE.phone}</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp.replace(/\s/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 text-text-secondary hover:text-text-primary transition-colors"
+                  >
+                    <MessageCircle className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">WhatsApp: {SITE.whatsapp}</span>
                   </a>
                   <div className="flex items-start gap-3 text-text-secondary">
                     <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />

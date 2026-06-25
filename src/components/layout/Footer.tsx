@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 import { Logo } from '@/components/shared/Logo'
 import { SITE, NAV_LINKS } from '@/lib/constants'
 import { FOOTER_COMMODITIES } from '@/lib/seo'
@@ -32,11 +32,20 @@ export function Footer() {
                 {SITE.email}
               </a>
               <a
-                href={`tel:${SITE.phone}`}
+                href={`tel:${SITE.phone.replace(/\s/g, '')}`}
                 className="flex items-center gap-2 text-text-secondary hover:text-gold text-sm transition-colors"
               >
                 <Phone className="w-4 h-4 text-gold" />
                 {SITE.phone}
+              </a>
+              <a
+                href={`https://wa.me/${SITE.whatsapp.replace(/\s/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-text-secondary hover:text-gold text-sm transition-colors"
+              >
+                <MessageCircle className="w-4 h-4 text-gold" />
+                WhatsApp: {SITE.whatsapp}
               </a>
               <span className="flex items-center gap-2 text-text-secondary text-sm">
                 <MapPin className="w-4 h-4 text-gold shrink-0" />
